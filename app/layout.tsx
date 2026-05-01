@@ -10,7 +10,12 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "Noir Planner",
-  description: "AI content planning for creators."
+  description: "AI content planning for creators.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png"
+  }
 };
 
 export default function RootLayout({
