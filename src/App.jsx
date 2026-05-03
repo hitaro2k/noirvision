@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
 import {
   Aperture,
@@ -911,34 +912,140 @@ const localizedCases = {
 
 const caseAssets = [
   {
-    id: "referral-freebet",
+    id: "fitnerd-fitness-ai",
     number: "001",
-    videoUrl: "/videos/referral-campaign.mp4",
-    landingUrl: "/cases/referral-freebet",
-    landingScreens: ["/screens/referral-1.jpg", "/screens/referral-2.jpg", "/screens/referral-3.jpg"]
+    videoUrl: "/videos/FItnerdUGCMain.mp4",
+    landingUrl: "https://fitnerd-aiassistent.vercel.app/",
+    landingScreens: ["/landing/landimage/Fitnerdland1.png", "/landing/landimage/Fitnerdland2.png"]
   },
   {
-    id: "registration-bonus",
+    id: "kiko-contouring-ugc",
     number: "002",
-    videoUrl: "/videos/registration-bonus.mp4",
-    landingUrl: "/cases/registration-bonus",
-    landingScreens: ["/screens/bonus-1.jpg", "/screens/bonus-2.jpg", "/screens/bonus-3.jpg"]
+    videoUrl: "/videos/kiko_conturing.mp4",
+    phoneVideoUrl: "/videos/hf_20260422_123112_b6aff012-f93f-48cf-ba4f-e9e4204785f0.mp4",
+    landingUrl: "/?landing=kiko",
+    landingScreens: ["/landing/landimage/kikoland1.png", "/landing/landimage/kikoland2.png", "/landing/landimage/kikoland3.png", "/landing/landimage/kikoland4.png"]
   },
   {
-    id: "betting-event",
+    id: "firstua-friend-bonus",
     number: "003",
-    videoUrl: "/videos/betting-event.mp4",
-    landingUrl: "/cases/betting-event",
-    landingScreens: ["/screens/betting-1.jpg", "/screens/betting-2.jpg", "/screens/betting-3.jpg"]
+    videoUrl: "/videos/BR10fr3000$.mp4",
+    landingUrl: "/?landing=firstua",
+    landingScreens: ["/landing/landimage/firstBRfriend1.png", "/landing/landimage/firstBRfriend2.png", "/landing/landimage/firstBRfriend3.png"]
   },
   {
-    id: "ugc-product-launch",
+    id: "patagonia-goretex-cinema",
     number: "004",
-    videoUrl: "/videos/ugc-product-launch.mp4",
-    landingUrl: "/cases/ugc-product-launch",
-    landingScreens: ["/screens/ugc-1.jpg", "/screens/ugc-2.jpg", "/screens/ugc-3.jpg"]
+    videoUrl: "/videos/patagonia(final).mp4",
+    landingUrl: "/?landing=patagonia",
+    landingScreens: ["/landing/landimage/patagonialand1.png", "/landing/landimage/patagonialand2.png"]
   }
 ];
+
+const realLocalizedCases = {
+  ENG: [
+    {
+      title: "Fitnerd FitnessAI",
+      input: "AI fitness assistant promo for intorvert(1 person)",
+      output: "UGC promo video + live landing page",
+      result: "A fitness AI product turned into a clear creator-style acquisition case.",
+      tags: ["FitnessAI", "UGC", "SaaS", "Landing"],
+      built: ["creator-style product angle", "app benefit hook", "AI assistant demo", "short-form promo edit", "landing proof screens", "CTA to live product", "mobile-first funnel"]
+    },
+    {
+      title: "KIKO Contouring UGC",
+      input: "Promote contouring product with creator-style beauty content",
+      output: "Beauty UGC promo + product landing",
+      result: "A contouring offer packed into a soft beauty demo with social proof and purchase CTA.",
+      tags: ["Beauty", "UGC", "KIKO", "Product"],
+      built: ["creator review angle", "contouring benefit hook", "beauty product demo", "phone-frame UGC scene", "landing screenshots", "purchase CTA", "social proof layout"]
+    },
+    {
+      title: "FirstUA Friend Bonus",
+      input: "10 friends = 3000$ bonus offer",
+      output: "Fast casino video + promo landing",
+      result: "Video and landing assembled as a rapid iGaming test in 10 minutes.",
+      tags: ["iGaming", "Fast Test", "Bonus", "Landing"],
+      built: ["direct bonus hook", "friend-referral mechanic", "10-minute production sprint", "casino promo video", "offer landing", "bonus CTA", "quick launch package"]
+    },
+    {
+      title: "Patagonia Gore-Tex Cinema",
+      input: "Cinematic promo for Gore-Tex Patagonia jacket",
+      output: "AI-cinema promo + product landing",
+      result: "Outdoor apparel offer turned into a cinematic ad and landing in 20-30 minutes.",
+      tags: ["Cinema", "Fashion", "Gore-Tex", "AI Video"],
+      built: ["cinematic product angle", "weather-proof benefit hook", "AI motion scenes", "premium jacket visuals", "20-30 minute production sprint", "product landing", "purchase CTA"]
+    }
+  ],
+  RU: [
+    {
+      title: "Fitnerd FitnessAI",
+      input: "Промо AI fitness assistant с продуктовой demo-воронкой",
+      output: "UGC промо-видео + живой лендинг",
+      result: "AI fitness продукт упакован в понятный creator-style acquisition case.",
+      tags: ["FitnessAI", "UGC", "SaaS", "Landing"],
+      built: ["creator-style угол", "hook пользы приложения", "демо AI assistant", "short-form promo edit", "скрины лендинга", "CTA на живой продукт", "mobile-first funnel"]
+    },
+    {
+      title: "KIKO Contouring UGC",
+      input: "Прорекламировать contouring продукт через creator-style beauty content",
+      output: "Beauty UGC промо + продуктовый лендинг",
+      result: "Оффер по контурингу упакован в мягкий beauty demo с social proof и purchase CTA.",
+      tags: ["Beauty", "UGC", "KIKO", "Product"],
+      built: ["creator review angle", "hook пользы контуринга", "beauty product demo", "UGC сцена в телефоне", "скрины лендинга", "purchase CTA", "social proof layout"]
+    },
+    {
+      title: "FirstUA Friend Bonus",
+      input: "Оффер: 10 друзей = 3000$ бонус",
+      output: "Fast casino video + promo landing",
+      result: "Видео и лендинг собраны как быстрый iGaming тест за 10 минут.",
+      tags: ["iGaming", "Fast Test", "Bonus", "Landing"],
+      built: ["direct bonus hook", "referral mechanic", "production sprint за 10 минут", "casino promo video", "офферный лендинг", "bonus CTA", "quick launch package"]
+    },
+    {
+      title: "Patagonia Gore-Tex Cinema",
+      input: "Cinematic promo для Gore-Tex куртки Patagonia",
+      output: "AI-cinema promo + product landing",
+      result: "Outdoor apparel оффер превращён в cinematic ad и landing за 20-30 минут.",
+      tags: ["Cinema", "Fashion", "Gore-Tex", "AI Video"],
+      built: ["cinematic product angle", "weather-proof benefit hook", "AI motion scenes", "premium jacket visuals", "production sprint за 20-30 минут", "product landing", "purchase CTA"]
+    }
+  ],
+  UA: [
+    {
+      title: "Fitnerd FitnessAI",
+      input: "Промо AI fitness assistant з продуктовою demo-воронкою",
+      output: "UGC промо-відео + живий лендинг",
+      result: "AI fitness продукт упаковано в зрозумілий creator-style acquisition case.",
+      tags: ["FitnessAI", "UGC", "SaaS", "Landing"],
+      built: ["creator-style кут", "hook користі додатку", "демо AI assistant", "short-form promo edit", "скрини лендинга", "CTA на живий продукт", "mobile-first funnel"]
+    },
+    {
+      title: "KIKO Contouring UGC",
+      input: "Прорекламувати contouring продукт через creator-style beauty content",
+      output: "Beauty UGC промо + продуктовий лендинг",
+      result: "Оффер по контурингу упаковано в м'який beauty demo з social proof і purchase CTA.",
+      tags: ["Beauty", "UGC", "KIKO", "Product"],
+      built: ["creator review angle", "hook користі контурингу", "beauty product demo", "UGC сцена в телефоні", "скрини лендинга", "purchase CTA", "social proof layout"]
+    },
+    {
+      title: "FirstUA Friend Bonus",
+      input: "Оффер: 10 друзів = 3000$ бонус",
+      output: "Fast casino video + promo landing",
+      result: "Відео і лендинг зібрані як швидкий iGaming тест за 10 хвилин.",
+      tags: ["iGaming", "Fast Test", "Bonus", "Landing"],
+      built: ["direct bonus hook", "referral mechanic", "production sprint за 10 хвилин", "casino promo video", "офферний лендинг", "bonus CTA", "quick launch package"]
+    },
+    {
+      title: "Patagonia Gore-Tex Cinema",
+      input: "Cinematic promo для Gore-Tex куртки Patagonia",
+      output: "AI-cinema promo + product landing",
+      result: "Outdoor apparel оффер перетворено на cinematic ad і landing за 20-30 хвилин.",
+      tags: ["Cinema", "Fashion", "Gore-Tex", "AI Video"],
+      built: ["cinematic product angle", "weather-proof benefit hook", "AI motion scenes", "premium jacket visuals", "production sprint за 20-30 хвилин", "product landing", "purchase CTA"]
+    }
+  ]
+};
 
 const newspaperStories = {
   ENG: [
@@ -1087,7 +1194,8 @@ const newspaperStories = {
 const languages = ["UA", "RU", "ENG"];
 
 function getCases(language) {
-  return localizedCases[language].map((item, index) => ({ ...caseAssets[index], ...item }));
+  const copy = realLocalizedCases[language] || realLocalizedCases.ENG;
+  return copy.map((item, index) => ({ ...caseAssets[index], ...item }));
 }
 
 function App() {
@@ -1752,7 +1860,7 @@ function CaseCard({ item, index, labels, onClick }) {
       <div className="absolute -right-16 top-0 h-32 w-32 rounded-full bg-goldAccent/10 blur-3xl opacity-0 transition group-hover:opacity-100" />
       <button type="button" onClick={handleCardClick} className="relative block w-full p-2.5 text-left md:p-3" aria-expanded={expanded}>
         <div className="grid gap-3 lg:grid-cols-[104px_1fr] xl:grid-cols-[116px_1fr]">
-          <NoirPreview number={item.number} title={item.title} />
+          <NoirPreview number={item.number} title={item.title} videoUrl={item.videoUrl} />
           <div className="relative min-w-0">
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
@@ -1812,17 +1920,18 @@ function MobileEvidenceDrawer({ item, labels, onOpenCase }) {
       transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="mobile-evidence-video">
-        <div className="absolute inset-0 noir-photo-placeholder" />
+        <video
+          className="mobile-evidence-media"
+          src={item.phoneVideoUrl || item.videoUrl}
+          controls
+          playsInline
+          preload="metadata"
+        />
         <div className="absolute left-3 top-3 border border-white/20 bg-black/55 px-2 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-noirPaper">
           CASE {item.number}
         </div>
-        <div className="absolute inset-0 grid place-items-center">
-          <div className="grid h-14 w-14 place-items-center rounded-full border border-noirPaper/30 bg-black/42 shadow-[0_0_34px_rgba(255,226,150,0.18)]">
-            <Play className="ml-1 text-noirPaper" size={22} fill="currentColor" />
-          </div>
-        </div>
         <p className="absolute bottom-3 left-3 right-3 truncate border border-white/10 bg-black/55 px-2 py-1 text-[10px] font-bold text-noirMuted">
-          {item.videoUrl}
+          {item.phoneVideoUrl || item.videoUrl}
         </p>
       </div>
       <button type="button" onClick={onOpenCase} className="mobile-evidence-action">
@@ -1833,10 +1942,11 @@ function MobileEvidenceDrawer({ item, labels, onOpenCase }) {
   );
 }
 
-function NoirPreview({ number, title }) {
+function NoirPreview({ number, title, videoUrl }) {
   return (
     <div className="relative hidden min-h-[104px] overflow-hidden border border-noirPaper/15 bg-[#090909] lg:block xl:min-h-[116px]" aria-label={title}>
-      <div className="absolute inset-0 noir-photo-placeholder" />
+      <video className="case-video-preview" src={videoUrl} muted loop playsInline preload="metadata" />
+      <div className="absolute inset-0 case-video-scrim" />
       <div className="absolute left-3 top-3 border border-white/20 bg-black/45 px-2 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-noirPaper">
         CASE {number}
       </div>
@@ -1862,13 +1972,17 @@ function TagRow({ tags }) {
 }
 
 function CaseModal({ item, t, onClose }) {
+  const [activeScreen, setActiveScreen] = useState(null);
+
   return (
     <motion.div
       className="fixed inset-0 z-50 overflow-y-auto bg-black/80 p-0 backdrop-blur-xl md:p-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      onMouseDown={onClose}
+      onMouseDown={() => {
+        if (!activeScreen) onClose();
+      }}
     >
       <motion.article
         className="case-file-modal relative mx-auto min-h-screen w-full max-w-6xl overflow-hidden break-words border border-noirPaper/20 bg-[#0b0b0d]/96 p-4 shadow-[0_40px_140px_rgba(0,0,0,0.86)] md:min-h-0 md:p-7"
@@ -1898,8 +2012,9 @@ function CaseModal({ item, t, onClose }) {
 
         <div className="mt-7 overflow-hidden border border-noirPaper/20 bg-black/45">
           <div className="relative aspect-video bg-[radial-gradient(circle_at_45%_35%,rgba(255,255,220,0.14),transparent_24%),linear-gradient(135deg,rgba(16,16,18,0.95),rgba(0,0,0,1))]">
+            <video className="case-modal-video" src={item.videoUrl} controls playsInline preload="metadata" poster={item.landingScreens?.[0]} />
             <div className="absolute inset-0 noir-film-lines" />
-            <div className="absolute inset-0 grid place-items-center">
+            <div className="pointer-events-none absolute inset-0 grid place-items-center">
               <div className="grid h-20 w-20 place-items-center rounded-full border border-noirPaper/30 bg-black/40 shadow-[0_0_50px_rgba(255,255,220,0.18)]">
                 <Play className="ml-1 text-noirPaper" size={32} fill="currentColor" />
               </div>
@@ -1929,13 +2044,20 @@ function CaseModal({ item, t, onClose }) {
         <CaseFilePanel label={t.modal.landingPreview} title={t.modal.landingEvidence} className="mt-4">
           <div className="grid gap-3 md:grid-cols-3">
             {item.landingScreens.map((screen, index) => (
-              <div key={screen} className="relative overflow-hidden border border-noirPaper/15 bg-black/30">
-                <div className="aspect-[4/3] noir-screen-placeholder" />
+              <button
+                key={screen}
+                type="button"
+                className="landing-evidence-card relative overflow-hidden border border-noirPaper/15 bg-black/30 text-left"
+                onClick={() => setActiveScreen({ src: screen, index })}
+              >
+                <div className="aspect-[9/16] bg-black">
+                  <img className="landing-screen-img" src={screen} alt={`${item.title} landing screen ${index + 1}`} loading="lazy" />
+                </div>
                 <span className="absolute bottom-3 left-3 bg-black/55 px-2 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-noirPaper/80">
                   {t.modal.screen} {index + 1}
                 </span>
                 <span className="absolute right-3 top-3 max-w-[70%] truncate border border-white/10 bg-black/55 px-2 py-1 text-[10px] text-noirMuted">{screen}</span>
-              </div>
+              </button>
             ))}
           </div>
         </CaseFilePanel>
@@ -1950,7 +2072,44 @@ function CaseModal({ item, t, onClose }) {
             <ScanSearch size={18} />
           </a>
         </div>
+
       </motion.article>
+
+      {createPortal(
+        <AnimatePresence>
+          {activeScreen && (
+            <motion.div
+              className="screen-lightbox fixed inset-0 z-[999] grid place-items-center bg-black/90 p-2 backdrop-blur-md md:p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onWheel={(event) => event.preventDefault()}
+              onTouchMove={(event) => event.preventDefault()}
+              onMouseDown={(event) => {
+                event.stopPropagation();
+                setActiveScreen(null);
+              }}
+            >
+              <motion.figure
+                className="screen-lightbox-frame relative flex max-h-[96vh] w-[96vw] max-w-[96vw] flex-col overflow-hidden border border-noirPaper/25 bg-[#050505]"
+                initial={{ opacity: 0, y: 18, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 18, scale: 0.96 }}
+                onMouseDown={(event) => event.stopPropagation()}
+              >
+                <button type="button" className="file-close" onClick={() => setActiveScreen(null)} aria-label={t.modal.close}>
+                  <X size={18} />
+                </button>
+                <img className="screen-lightbox-img" src={activeScreen.src} alt={`${item.title} landing screen ${activeScreen.index + 1}`} />
+                <figcaption className="border-t border-white/10 bg-black/72 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-softGold">
+                  {t.modal.landingPreview} // {t.modal.screen} {activeScreen.index + 1}
+                </figcaption>
+              </motion.figure>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </motion.div>
   );
 }
