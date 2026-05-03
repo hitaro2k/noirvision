@@ -189,6 +189,8 @@ const translations = {
         "Starting points for different levels of production. Final scope depends on campaign volume, creative complexity, and production budget.",
       note:
         "Generation and production material budget is calculated separately depending on the volume and complexity. Typical range: $50–150.",
+      priceLogic:
+        "The final price also depends on the visual realism level. Fast test creatives made in 10–20 minutes can cost 1.5–2x less. If you want a realistic creative that feels close to live production and hides the AI look, the price stays closer to the packages below.",
       bestFor: "Best for",
       labels: {
         caseType: "CASE TYPE",
@@ -450,6 +452,8 @@ const translations = {
         "Стартовые пакеты для разных уровней продакшна. Финальный scope зависит от объёма кампании, сложности креатива и production budget.",
       note:
         "Бюджет на генерации и production materials считается отдельно в зависимости от объёма и сложности. Ориентир: $50–150.",
+      priceLogic:
+        "Финальная цена также зависит от уровня визуального реализма. Быстрые тестовые креативы, которые делаются за 10–20 минут, могут стоить в 1.5–2 раза дешевле. Если нужен реалистичный креатив, максимально похожий на живую съёмку и без заметного AI-вида, цена остаётся ближе к пакетам ниже.",
       bestFor: "Лучше всего для",
       labels: {
         caseType: "ТИП КЕЙСА",
@@ -711,6 +715,8 @@ const translations = {
         "Стартові пакети для різних рівнів продакшну. Фінальний scope залежить від обсягу кампанії, складності креативу та production budget.",
       note:
         "Бюджет на генерації та production materials рахується окремо залежно від обсягу і складності. Орієнтир: $50–150.",
+      priceLogic:
+        "Фінальна ціна також залежить від рівня візуального реалізму. Швидкі тестові креативи, які робляться за 10–20 хвилин, можуть коштувати у 1.5–2 рази дешевше. Якщо потрібен реалістичний креатив, максимально схожий на живу зйомку і без помітного AI-вигляду, ціна залишається ближче до пакетів нижче.",
       bestFor: "Найкраще для",
       labels: {
         caseType: "ТИП КЕЙСУ",
@@ -1378,12 +1384,25 @@ function PageTurnOverlay({ t, language }) {
       if (canUseControlledPageTurn() || transitionRef.current) return;
 
       const scrollY = window.scrollY;
+      const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      const activeIndex = getMobileActiveIndex();
+      const isAtDocumentEnd = scrollY >= maxScroll - 24;
+
+      if (activeIndex >= sections.length - 1 || isAtDocumentEnd) {
+        lastMobileStoryKey.current = "";
+        setTurn((current) => current.active ? { active: false, progress: 0, direction: current.direction || 1 } : current);
+        return;
+      }
+
       const scrollDirection = scrollY >= lastMobileScrollY.current ? 1 : -1;
       lastMobileScrollY.current = scrollY;
       const viewport = window.innerHeight;
       let activeBoundary = null;
 
       for (let index = 0; index < sections.length - 1; index += 1) {
+        const nextPageId = sections[index + 1]?.getAttribute("data-page-id");
+        if (nextPageId === "contact") continue;
+
         const boundary = sections[index + 1].offsetTop;
         const zoneStart = boundary - viewport * 0.58;
         const zoneEnd = boundary + viewport * 0.18;
@@ -2271,7 +2290,10 @@ function DepartmentPanel({ panel, dominant, index, departmentLabel }) {
 function CasePackages({ t }) {
   return (
     <Section id="deals" eyebrow={t.packages.eyebrow} title={t.packages.title} subtitle={t.packages.subtitle}>
-      <p className="-mt-4 mb-8 max-w-3xl border border-noirPaper/15 bg-white/[0.035] p-4 text-sm leading-6 text-noirMuted">{t.packages.note}</p>
+      <div className="-mt-4 mb-8 grid max-w-4xl gap-3">
+        <p className="border border-noirPaper/15 bg-white/[0.035] p-4 text-sm leading-6 text-noirMuted">{t.packages.note}</p>
+        <p className="border border-goldAccent/25 bg-goldAccent/[0.06] p-4 text-sm font-bold leading-6 text-noirPaper/78">{t.packages.priceLogic}</p>
+      </div>
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {t.packages.items.map((item, index) => (
           <motion.article
