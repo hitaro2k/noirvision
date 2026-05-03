@@ -940,6 +940,150 @@ const caseAssets = [
   }
 ];
 
+const newspaperStories = {
+  ENG: [
+    {
+      headline: "HOOK FIRST",
+      kicker: "Offer intelligence",
+      subhead: "A dead first second kills the funnel before the landing ever loads.",
+      notesTitle: "Case Notes",
+      notes: "Money on screen, a win reaction, or a sharp question. The first 2-3 seconds decide if traffic stays alive.",
+      deskTitle: "Creative Desk",
+      desk: "We turn the raw offer into a hook, short-form script, landing promise, CTA and test angles."
+    },
+    {
+      headline: "UGC TRUST",
+      kicker: "iGaming field note",
+      subhead: "Glossy production often feels fake. Native creator footage feels closer to the player.",
+      notesTitle: "Audience Signal",
+      notes: "UGC style, phone framing, rough edges and human reactions can beat expensive studio polish in cold traffic.",
+      deskTitle: "Execution",
+      desk: "Creator angle, gameplay clip, reaction beat, UI overlay, bonus message and landing continuation."
+    },
+    {
+      headline: "LOCAL ANGLES",
+      kicker: "Market adaptation",
+      subhead: "Ukraine, Brazil and India do not need the same rhythm, music, visual proof or CTA.",
+      notesTitle: "Local Clues",
+      notes: "One offer can become several localized creative files: language, tempo, payment context and trust trigger.",
+      deskTitle: "System",
+      desk: "We prepare variants for regions, traffic sources, formats, thumbnails and landing copy."
+    },
+    {
+      headline: "FAST ITERATIONS",
+      kicker: "Production system",
+      subhead: "No magic service. The business needs a repeatable machine for cheap creative tests.",
+      notesTitle: "Pipeline",
+      notes: "Cheap iterations, best frame selection, control pass, UI polish, motion polish and final edit.",
+      deskTitle: "Output",
+      desk: "Raw offer in. Script, video, landing, adaptations and testing hypotheses out."
+    },
+    {
+      headline: "DEPOSIT PATH",
+      kicker: "Conversion mechanics",
+      subhead: "Urgency and exclusivity are not decoration in iGaming. They are part of the offer logic.",
+      notesTitle: "Trigger File",
+      notes: "Today only, first players, new users, freebet, bonus, cashback and deposit cues must be clear fast.",
+      deskTitle: "Funnel",
+      desk: "The ad promise repeats on the landing so the user knows exactly what to do next."
+    }
+  ],
+  RU: [
+    {
+      headline: "ХУК ПЕРВЫМ",
+      kicker: "Разбор оффера",
+      subhead: "Если первые секунды мертвые, лендинг уже не спасает кампанию.",
+      notesTitle: "Заметки",
+      notes: "Деньги на экране, эмоция выигрыша или вопрос-провокация. Первые 2-3 секунды решают, живет ли трафик.",
+      deskTitle: "Креативный стол",
+      desk: "Мы превращаем сырой оффер в hook, сценарий, landing promise, CTA и тестовые углы."
+    },
+    {
+      headline: "UGC ДОВЕРИЕ",
+      kicker: "iGaming заметка",
+      subhead: "Глянец часто выглядит фейково. Контент от лица игрока вызывает больше доверия.",
+      notesTitle: "Сигнал аудитории",
+      notes: "UGC-стиль, телефонный кадр, живые реакции и gameplay часто сильнее дорогого продакшна.",
+      deskTitle: "Сборка",
+      desk: "Creator angle, gameplay, реакция, UI overlay, bonus message и продолжение на лендинге."
+    },
+    {
+      headline: "ЛОКАЛЬНЫЙ УГОЛ",
+      kicker: "Адаптация рынка",
+      subhead: "Украине, Бразилии и Индии нужны разные темп, музыка, визуал и CTA.",
+      notesTitle: "Локальные улики",
+      notes: "Один оффер превращается в несколько файлов: язык, ритм, платежный контекст и trust trigger.",
+      deskTitle: "Система",
+      desk: "Готовим варианты под регионы, traffic sources, форматы, thumbnails и landing copy."
+    },
+    {
+      headline: "БЫСТРЫЕ ТЕСТЫ",
+      kicker: "Система продакшна",
+      subhead: "Нужен не магический сервис, а повторяемая машина дешевых итераций.",
+      notesTitle: "Пайплайн",
+      notes: "Дешевые итерации, отбор лучших кадров, control pass, UI polish, motion polish и монтаж.",
+      deskTitle: "Выход",
+      desk: "Сырой оффер на входе. Сценарий, видео, лендинг, адаптации и тестовые гипотезы на выходе."
+    },
+    {
+      headline: "ПУТЬ К ДЕПОЗИТУ",
+      kicker: "Механика конверсии",
+      subhead: "Срочность и эксклюзивность в iGaming не декор. Это часть логики оффера.",
+      notesTitle: "Триггеры",
+      notes: "Только сегодня, первые игроки, новые юзеры, freebet, bonus, cashback и deposit cues должны читаться быстро.",
+      deskTitle: "Воронка",
+      desk: "Обещание из рекламы повторяется на лендинге, чтобы следующий шаг был очевиден."
+    }
+  ],
+  UA: [
+    {
+      headline: "ХУК ПЕРШИМ",
+      kicker: "Розбір оффера",
+      subhead: "Якщо перші секунди мертві, лендинг уже не врятує кампанію.",
+      notesTitle: "Нотатки",
+      notes: "Гроші на екрані, емоція виграшу або провокаційне питання. Перші 2-3 секунди вирішують, чи живе трафік.",
+      deskTitle: "Креативний стіл",
+      desk: "Ми перетворюємо сирий оффер на hook, сценарій, landing promise, CTA і тестові кути."
+    },
+    {
+      headline: "UGC ДОВІРА",
+      kicker: "iGaming нотатка",
+      subhead: "Глянець часто виглядає фейково. Контент від гравця викликає більше довіри.",
+      notesTitle: "Сигнал аудиторії",
+      notes: "UGC-стиль, телефонний кадр, живі реакції та gameplay часто сильніші за дорогий продакшн.",
+      deskTitle: "Збірка",
+      desk: "Creator angle, gameplay, реакція, UI overlay, bonus message і продовження на лендингу."
+    },
+    {
+      headline: "ЛОКАЛЬНИЙ КУТ",
+      kicker: "Адаптація ринку",
+      subhead: "Україні, Бразилії та Індії потрібні різні темп, музика, візуал і CTA.",
+      notesTitle: "Локальні докази",
+      notes: "Один оффер стає кількома файлами: мова, ритм, платіжний контекст і trust trigger.",
+      deskTitle: "Система",
+      desk: "Готуємо варіанти під регіони, traffic sources, формати, thumbnails і landing copy."
+    },
+    {
+      headline: "ШВИДКІ ТЕСТИ",
+      kicker: "Система продакшну",
+      subhead: "Потрібен не магічний сервіс, а повторювана машина дешевих ітерацій.",
+      notesTitle: "Пайплайн",
+      notes: "Дешеві ітерації, відбір кращих кадрів, control pass, UI polish, motion polish і монтаж.",
+      deskTitle: "Вихід",
+      desk: "Сирий оффер на вході. Сценарій, відео, лендинг, адаптації та тестові гіпотези на виході."
+    },
+    {
+      headline: "ШЛЯХ ДО ДЕПОЗИТУ",
+      kicker: "Механіка конверсії",
+      subhead: "Терміновість і ексклюзивність в iGaming не декор. Це частина логіки оффера.",
+      notesTitle: "Тригери",
+      notes: "Тільки сьогодні, перші гравці, нові юзери, freebet, bonus, cashback і deposit cues мають читатися швидко.",
+      deskTitle: "Воронка",
+      desk: "Обіцянка з реклами повторюється на лендингу, щоб наступний крок був очевидним."
+    }
+  ]
+};
+
 const languages = ["UA", "RU", "ENG"];
 
 function getCases(language) {
@@ -979,7 +1123,7 @@ function App() {
     <div className="relative min-h-screen overflow-hidden bg-noirBlack text-noirPaper">
       <NoirAtmosphere />
       <Header t={t} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <PageTurnOverlay t={t} />
+      <PageTurnOverlay t={t} language={language} />
       <main className="relative z-10">
         <Hero t={t} language={language} cases={cases} setActiveCase={setActiveCase} />
         <InvestigationProcess t={t} />
@@ -1048,15 +1192,171 @@ function LanguageSwitcher({ t, language, setLanguage, compact = false, order = l
   );
 }
 
-function PageTurnOverlay({ t }) {
+const clampTurn = (value) => Math.min(1, Math.max(0, value));
+
+const mixTurn = (from, to, progress) => from + (to - from) * progress;
+
+const canUseControlledPageTurn = () =>
+  typeof window !== "undefined" && window.matchMedia("(min-width: 1024px) and (pointer: fine)").matches;
+
+function pageTurnFrame(progress, direction) {
+  const points = [
+    { at: 0, x: 118, ry: -72, rz: 2.4, skew: -1.1, scale: 1 },
+    { at: 0.26, x: 14, ry: -22, rz: 0.7, skew: -0.3, scale: 1 },
+    { at: 0.44, x: 0, ry: -2, rz: 0, skew: 0, scale: 0.992 },
+    { at: 0.62, x: -3, ry: 4, rz: -0.2, skew: 0, scale: 0.992 },
+    { at: 0.82, x: -76, ry: 46, rz: -2.4, skew: 1, scale: 1 },
+    { at: 1, x: -126, ry: 76, rz: -4.2, skew: 1.5, scale: 1 }
+  ];
+
+  const nextIndex = points.findIndex((point) => progress <= point.at);
+  const end = points[Math.max(1, nextIndex)];
+  const start = points[Math.max(0, nextIndex - 1)];
+  const local = end.at === start.at ? 0 : (progress - start.at) / (end.at - start.at);
+  const opacity = progress < 0.08 ? progress / 0.08 : progress > 0.92 ? (1 - progress) / 0.08 : 1;
+  const sheetDirection = direction >= 0 ? 1 : -1;
+
+  return {
+    opacity: clampTurn(opacity),
+    shadowOpacity: Math.sin(progress * Math.PI),
+    sheenOpacity: progress > 0.16 && progress < 0.86 ? 0.42 : 0,
+    transform: `translateX(${mixTurn(start.x, end.x, local) * sheetDirection}vw) rotateY(${mixTurn(start.ry, end.ry, local) * sheetDirection}deg) rotateZ(${mixTurn(start.rz, end.rz, local) * sheetDirection}deg) skewY(${mixTurn(start.skew, end.skew, local)}deg) scale(${mixTurn(start.scale, end.scale, local)})`,
+    transformOrigin: sheetDirection >= 0 ? "left center" : "right center"
+  };
+}
+
+function PageTurnOverlay({ t, language }) {
   const [page, setPage] = useState("top");
-  const [flipping, setFlipping] = useState(false);
-  const previousPage = useRef("top");
-  const flipTimeout = useRef(null);
+  const [turn, setTurn] = useState({ active: false, progress: 0, direction: 1 });
+  const [storyIndex, setStoryIndex] = useState(0);
+  const sectionsRef = useRef([]);
+  const currentIndex = useRef(0);
+  const transitionRef = useRef(null);
+  const progressRef = useRef(0);
+  const settling = useRef(false);
+  const lockedScrollY = useRef(0);
+  const mobileAnimationRef = useRef(null);
+  const mobileScrollRaf = useRef(null);
+  const lastMobileStoryKey = useRef("");
+  const lastMobileScrollY = useRef(0);
+  const observedReady = useRef(false);
+  const mobileReady = useRef(false);
 
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll("[data-page-id]"));
     if (!sections.length) return undefined;
+    sectionsRef.current = sections;
+
+    const stopMobileAnimation = () => {
+      if (mobileAnimationRef.current) {
+        window.cancelAnimationFrame(mobileAnimationRef.current);
+        mobileAnimationRef.current = null;
+      }
+    };
+
+    const getMobileActiveIndex = () => {
+      const threshold = Math.min(160, window.innerHeight * 0.26);
+      let activeIndex = 0;
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= threshold) activeIndex = index;
+      });
+
+      return activeIndex;
+    };
+
+    const syncMobilePageTurnProgress = () => {
+      if (canUseControlledPageTurn() || transitionRef.current) return;
+
+      const scrollY = window.scrollY;
+      const scrollDirection = scrollY >= lastMobileScrollY.current ? 1 : -1;
+      lastMobileScrollY.current = scrollY;
+      const viewport = window.innerHeight;
+      let activeBoundary = null;
+
+      for (let index = 0; index < sections.length - 1; index += 1) {
+        const boundary = sections[index + 1].offsetTop;
+        const zoneStart = boundary - viewport * 0.58;
+        const zoneEnd = boundary + viewport * 0.18;
+
+        if (scrollY >= zoneStart && scrollY <= zoneEnd) {
+          const raw = clampTurn((scrollY - zoneStart) / (zoneEnd - zoneStart));
+          const direction = scrollDirection >= 0 ? 1 : -1;
+          const progress = direction >= 0 ? raw : 1 - raw;
+          activeBoundary = { index, direction, progress };
+          break;
+        }
+      }
+
+      if (!activeBoundary || activeBoundary.progress <= 0.05 || activeBoundary.progress >= 0.97) {
+        lastMobileStoryKey.current = "";
+        setTurn((current) => current.active ? { active: false, progress: 0, direction: current.direction || 1 } : current);
+        return;
+      }
+
+      const targetIndex = activeBoundary.direction >= 0 ? activeBoundary.index + 1 : activeBoundary.index;
+      const targetPage = sections[targetIndex]?.getAttribute("data-page-id") || "top";
+      const storyKey = `${activeBoundary.index}:${activeBoundary.direction}`;
+
+      if (lastMobileStoryKey.current !== storyKey) {
+        lastMobileStoryKey.current = storyKey;
+        setStoryIndex((value) => value + 1);
+      }
+
+      setPage(targetPage);
+      setTurn({
+        active: true,
+        progress: clampTurn(activeBoundary.progress),
+        direction: activeBoundary.direction
+      });
+    };
+
+    const syncMobilePage = ({ animate = true } = {}) => {
+      if (canUseControlledPageTurn()) return;
+
+      const nextIndex = getMobileActiveIndex();
+      const targetPage = sections[nextIndex]?.getAttribute("data-page-id") || "top";
+
+      if (!mobileReady.current || !animate) {
+        mobileReady.current = true;
+        currentIndex.current = nextIndex;
+        setPage(targetPage);
+        syncMobilePageTurnProgress();
+        return;
+      }
+
+      if (transitionRef.current) return;
+
+      if (nextIndex !== currentIndex.current && !mobileAnimationRef.current) {
+        currentIndex.current = nextIndex;
+      }
+
+      if (!mobileAnimationRef.current) {
+        setPage(targetPage);
+      }
+      syncMobilePageTurnProgress();
+    };
+
+    const handleMobileScroll = () => {
+      if (canUseControlledPageTurn()) return;
+      if (mobileScrollRaf.current) return;
+
+      mobileScrollRaf.current = window.requestAnimationFrame(() => {
+        mobileScrollRaf.current = null;
+        syncMobilePage({ animate: true });
+      });
+    };
+
+    const resetMobileMode = () => {
+      if (canUseControlledPageTurn()) return;
+      document.documentElement.classList.remove("is-page-turning");
+      transitionRef.current = null;
+      progressRef.current = 0;
+      stopMobileAnimation();
+      setTurn((current) => ({ active: false, progress: 0, direction: current.direction || 1 }));
+      syncMobilePage({ animate: false });
+    };
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -1065,40 +1365,220 @@ function PageTurnOverlay({ t }) {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         const nextPage = visible?.target?.getAttribute("data-page-id");
 
-        if (nextPage && nextPage !== previousPage.current) {
-          previousPage.current = nextPage;
+        if (nextPage && !transitionRef.current) {
+          if (!canUseControlledPageTurn()) return;
+          const nextIndex = sections.findIndex((section) => section.getAttribute("data-page-id") === nextPage);
+          if (!observedReady.current) {
+            observedReady.current = true;
+            if (nextIndex >= 0) currentIndex.current = nextIndex;
+            setPage(nextPage);
+            return;
+          }
+
+          if (nextIndex >= 0 && nextIndex !== currentIndex.current) {
+            currentIndex.current = nextIndex;
+          } else if (nextIndex >= 0) {
+            currentIndex.current = nextIndex;
+          }
           setPage(nextPage);
-          setFlipping(true);
-          if (flipTimeout.current) window.clearTimeout(flipTimeout.current);
-          flipTimeout.current = window.setTimeout(() => setFlipping(false), 1450);
         }
       },
       { rootMargin: "-38% 0px -42% 0px", threshold: [0.08, 0.22, 0.42, 0.62] }
     );
 
     sections.forEach((section) => observer.observe(section));
+    syncMobilePage({ animate: false });
+    lastMobileScrollY.current = window.scrollY;
+    window.addEventListener("scroll", handleMobileScroll, { passive: true });
+    window.addEventListener("resize", resetMobileMode);
+
     return () => {
       observer.disconnect();
-      if (flipTimeout.current) window.clearTimeout(flipTimeout.current);
+      if (mobileScrollRaf.current) window.cancelAnimationFrame(mobileScrollRaf.current);
+      window.removeEventListener("scroll", handleMobileScroll);
+      window.removeEventListener("resize", resetMobileMode);
+      stopMobileAnimation();
+    };
+  }, []);
+
+  useEffect(() => {
+    const getClosestIndex = () => {
+      const sections = sectionsRef.current;
+      if (!sections.length) return 0;
+      const viewportCenter = window.innerHeight * 0.5;
+      return sections.reduce((closest, section, index) => {
+        const rect = section.getBoundingClientRect();
+        const distance = Math.abs(rect.top + rect.height * 0.34 - viewportCenter);
+        return distance < closest.distance ? { index, distance } : closest;
+      }, { index: currentIndex.current, distance: Number.POSITIVE_INFINITY }).index;
+    };
+
+    const finishTransition = () => {
+      const transition = transitionRef.current;
+      if (!transition) return;
+
+      settling.current = true;
+      document.documentElement.classList.remove("is-page-turning");
+      currentIndex.current = transition.toIndex;
+      const target = sectionsRef.current[transition.toIndex];
+      target?.scrollIntoView({ behavior: "auto", block: "start" });
+      if (target?.id) {
+        window.history.replaceState(null, "", `#${target.id}`);
+      }
+      transitionRef.current = null;
+      progressRef.current = 0;
+      setTurn({ active: false, progress: 0, direction: transition.direction });
+      window.setTimeout(() => {
+        settling.current = false;
+      }, 520);
+    };
+
+    const cancelTransition = () => {
+      const transition = transitionRef.current;
+      if (!transition) return;
+
+      document.documentElement.classList.remove("is-page-turning");
+      window.scrollTo({ top: lockedScrollY.current, behavior: "auto" });
+      const current = sectionsRef.current[transition.fromIndex];
+      if (current?.id) {
+        window.history.replaceState(null, "", `#${current.id}`);
+      }
+      transitionRef.current = null;
+      progressRef.current = 0;
+      setTurn({ active: false, progress: 0, direction: transition.direction });
+    };
+
+    const holdPageStill = () => {
+      window.scrollTo({ top: lockedScrollY.current, behavior: "auto" });
+      window.requestAnimationFrame(() => {
+        if (transitionRef.current) {
+          window.scrollTo({ top: lockedScrollY.current, behavior: "auto" });
+        }
+      });
+    };
+
+    const applyDelta = (deltaY, event) => {
+      if (!canUseControlledPageTurn()) return;
+      if (settling.current || document.body.style.overflow === "hidden") return;
+      if (Math.abs(deltaY) < 3) return;
+
+      const sections = sectionsRef.current;
+      if (!sections.length) return;
+      let transition = transitionRef.current;
+      const rawDirection = deltaY > 0 ? 1 : -1;
+
+      const isAtSectionEdge = (section, direction) => {
+        const rect = section.getBoundingClientRect();
+        const edgeBuffer = window.innerWidth < 768 ? 42 : 72;
+
+        if (direction > 0) {
+          return rect.bottom <= window.innerHeight + edgeBuffer;
+        }
+
+        return rect.top >= -edgeBuffer;
+      };
+
+      if (!transition) {
+        const fromIndex = getClosestIndex();
+        const toIndex = fromIndex + rawDirection;
+        if (toIndex < 0 || toIndex >= sections.length) return;
+        if (!isAtSectionEdge(sections[fromIndex], rawDirection)) return;
+
+        transition = { fromIndex, toIndex, direction: rawDirection };
+        transitionRef.current = transition;
+        lockedScrollY.current = window.scrollY;
+        document.documentElement.classList.add("is-page-turning");
+        progressRef.current = 0;
+        const targetPage = sections[toIndex]?.getAttribute("data-page-id") || "top";
+        setPage(targetPage);
+        setStoryIndex((value) => value + 1);
+        setTurn({ active: true, progress: 0.01, direction: rawDirection });
+      }
+
+      event?.preventDefault();
+      holdPageStill();
+      const scrollDistance = 980;
+      const nextProgress = clampTurn(progressRef.current + (deltaY * transition.direction) / scrollDistance);
+      progressRef.current = nextProgress;
+      setTurn({ active: true, progress: nextProgress, direction: transition.direction });
+
+      if (nextProgress >= 1) {
+        finishTransition();
+      } else if (nextProgress <= 0 && deltaY * transition.direction < 0) {
+        cancelTransition();
+      }
+    };
+
+    const handleWheel = (event) => applyDelta(event.deltaY, event);
+
+    const resetLockedTurn = () => {
+      if (canUseControlledPageTurn()) return;
+      document.documentElement.classList.remove("is-page-turning");
+      transitionRef.current = null;
+      progressRef.current = 0;
+      setTurn((current) => ({ active: false, progress: 0, direction: current.direction || 1 }));
+    };
+
+    resetLockedTurn();
+    const media = window.matchMedia("(min-width: 1024px) and (pointer: fine)");
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("resize", resetLockedTurn);
+    media.addEventListener?.("change", resetLockedTurn);
+
+    return () => {
+      document.documentElement.classList.remove("is-page-turning");
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("resize", resetLockedTurn);
+      media.removeEventListener?.("change", resetLockedTurn);
     };
   }, []);
 
   const pageTitle = t.pageTurn.pages[page] ?? t.pageTurn.pages.top;
+  const stories = newspaperStories[language] || newspaperStories.ENG;
+  const story = stories[storyIndex % stories.length];
+  const turnFrame = pageTurnFrame(turn.progress, turn.direction);
 
   return (
-    <div className={`page-turn-stage ${flipping ? "is-flipping" : ""}`} aria-hidden="true">
-      <div className="page-turn-shadow" />
+    <div className={`page-turn-stage lang-${language.toLowerCase()} ${turn.active ? "is-flipping" : ""}`} aria-hidden="true">
+      <div className="page-turn-shadow" style={{ opacity: turnFrame.shadowOpacity }} />
       <div className="page-turn-document">
-        <div className="page-turn-sheet">
-          <div className="page-turn-file-head">
+        <div
+          className="page-turn-sheet"
+          style={{
+            opacity: turnFrame.opacity,
+            transform: turnFrame.transform,
+            transformOrigin: turnFrame.transformOrigin,
+            "--turn-sheen": turnFrame.sheenOpacity
+          }}
+        >
+          <div className="newspaper-topline">
+            <span>9 AM<br />FINAL</span>
+            <strong>NoirVision Inquisitor</strong>
+            <span>EXTRA</span>
+          </div>
+          <div className="newspaper-meta">
+            <span>Vol. 001</span>
             <span>NoirVision AI</span>
-            <strong>AI-FIRST CREATIVE STUDIO</strong>
+            <span>AI-FIRST CREATIVE STUDIO</span>
           </div>
-          <div className="page-turn-file-body">
-            <em>{t.pageTurn.label}</em>
-            <b>{pageTitle}</b>
+          <h2 className="newspaper-headline">{story.headline}</h2>
+          <p className="newspaper-subhead">{t.pageTurn.label} // {pageTitle} // {story.kicker}</p>
+          <div className="newspaper-grid">
+            <div>
+              <h3>{story.notesTitle}</h3>
+              <p>{story.notes}</p>
+            </div>
+            <div>
+              <h3>{story.deskTitle}</h3>
+              <p>{story.desk}</p>
+            </div>
+            <div className="newspaper-photo">
+              <span>NoirVision AI</span>
+            </div>
           </div>
-          <div className="page-turn-file-stamp">CASE DOCUMENT</div>
+          <p className="newspaper-brief">{story.subhead}</p>
+          <div className="newspaper-fold" />
+          <div className="newspaper-stamp">EXTRA EDITION</div>
         </div>
       </div>
     </div>
@@ -1166,22 +1646,22 @@ function ScrollSpotlightText({ children, className = "" }) {
 function Hero({ t, language, cases, setActiveCase }) {
   const isLongLang = language === "RU" || language === "UA";
   const headlineClass = isLongLang
-    ? "text-[clamp(2.05rem,8.8vw,3.15rem)] leading-[0.94] sm:text-[clamp(2.65rem,4.25vw,4.55rem)]"
-    : "text-[clamp(2.75rem,12vw,4.6rem)] leading-[0.92] sm:text-[clamp(3.6rem,5.1vw,5.9rem)]";
+    ? "text-[clamp(1.82rem,7.8vw,2.72rem)] leading-[0.96] sm:text-[clamp(2.45rem,4vw,4.35rem)]"
+    : "text-[clamp(2.35rem,10.5vw,4.2rem)] leading-[0.93] sm:text-[clamp(3.3rem,4.9vw,5.65rem)]";
 
   return (
     <section id="top" data-page-id="top" className="mx-auto grid min-h-screen w-[calc(100%-32px)] max-w-7xl items-center gap-8 pb-8 pt-24 md:min-h-[100svh] md:w-[calc(100%-48px)] md:pt-24 lg:grid-cols-[0.82fr_1.18fr] xl:gap-12">
       <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }} className="min-w-0 max-w-2xl">
         <p className="case-eyebrow">{t.hero.eyebrow}</p>
-        <h1 className={`mt-4 break-words font-display font-black tracking-normal text-noirPaper ${headlineClass}`}>
+        <h1 className={`hero-headline mt-4 break-words font-display font-black tracking-normal text-noirPaper ${headlineClass}`}>
           {t.hero.headlineLead.map((line) => (
             <React.Fragment key={line}>
-              <span className="block sm:whitespace-nowrap">{line}</span>
+              <span className="block md:whitespace-nowrap">{line}</span>
             </React.Fragment>
           ))}
           <ScrollSpotlightText className="mt-[0.04em] block">
             {t.hero.headlineSpotlight.map((line) => (
-              <span key={line} className="block sm:whitespace-nowrap">
+              <span key={line} className="block md:whitespace-nowrap">
                 {line}
               </span>
             ))}
@@ -1675,8 +2155,8 @@ function CasePackages({ t }) {
 function FinalCTA({ t, language }) {
   const isLongLang = language === "RU" || language === "UA";
   const titleClass = isLongLang
-    ? "text-[clamp(1.95rem,9.4vw,2.85rem)] md:text-[clamp(3.25rem,5.4vw,5.1rem)]"
-    : "text-[clamp(2.35rem,12vw,3.6rem)] md:text-7xl";
+    ? "text-[clamp(1.62rem,7.1vw,2.25rem)] md:text-[clamp(3.05rem,5.1vw,4.75rem)]"
+    : "text-[clamp(2rem,10vw,3.35rem)] md:text-7xl";
 
   return (
     <section id="contact" data-page-id="contact" className="mx-auto w-[calc(100%-32px)] max-w-7xl py-20 md:w-[calc(100%-48px)]">
@@ -1689,7 +2169,7 @@ function FinalCTA({ t, language }) {
       >
         <Sparkles className="mx-auto text-goldAccent" size={30} />
         <p className="case-eyebrow mt-5">{t.cta.eyebrow}</p>
-        <h2 className={`mx-auto mt-4 max-w-4xl break-words [overflow-wrap:anywhere] font-display font-black leading-[0.95] text-noirPaper ${titleClass}`}>
+        <h2 className={`final-cta-title mx-auto mt-4 max-w-4xl break-words [overflow-wrap:anywhere] font-display font-black leading-[0.95] text-noirPaper ${titleClass}`}>
           {t.cta.title}
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-noirMuted md:text-lg">{t.cta.text}</p>
