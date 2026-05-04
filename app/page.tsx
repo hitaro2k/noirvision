@@ -66,13 +66,27 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        throw new Error("Request failed");
+        const payload = (await response.json().catch(() => null)) as
+          | { code?: string; error?: string }
+          | null;
+
+        if (payload?.code === "quota_exhausted") {
+          throw new Error(
+            "Daily free limit reached. Try again tomorrow or connect billing."
+          );
+        }
+
+        throw new Error(payload?.error || "Request failed");
       }
 
       const data = (await response.json()) as Plan;
       setResult(data);
-    } catch {
-      setError("Something went wrong. Check your API key.");
+    } catch (error) {
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Check your API key."
+      );
     } finally {
       setLoading(false);
     }

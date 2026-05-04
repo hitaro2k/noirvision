@@ -1,8 +1,16 @@
 import { NextResponse } from "next/server";
 import type { Plan, PlanRequest } from "@/types/plan";
 
-const GEMINI_URL =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent";
+const GEMINI_API_BASE =
+  "https://generativelanguage.googleapis.com/v1beta/models";
+
+const GEMINI_MODELS = [
+  "gemini-2.5-flash-lite",
+  "gemini-2.5-flash",
+  "gemma-3-4b-it",
+  "gemma-3-12b-it",
+  "gemma-3-1b-it"
+];
 
 type GeminiResponse = {
   candidates?: Array<{
@@ -51,32 +59,103 @@ export async function POST(request: Request) {
     mode
   });
 
-  try {
-    const response = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            role: "user",
-            parts: [{ text: prompt }]
-          }
-        ],
-        generationConfig: {
-          responseMimeType: "application/json",
-          temperature: 0.85
-        }
-      })
+  const failedModels: string[] = [];
+  let lastError = "Gemini request failed";
+  let quotaHit = false;
+
+  for (const model of GEMINI_MODELS) {
+    const result = await requestGeminiPlan({
+      apiKey,
+      model,
+      prompt
     });
+
+    if (result.plan) {
+      const plan =
+        mode === "content"
+          ? { ...result.plan, tools: ["CapCut", "InShot", "DaVinci Resolve"] }
+          : result.plan;
+
+      return NextResponse.json({ ...plan, model });
+    }
+
+    failedModels.push(model);
+    lastError = result.error || lastError;
+
+    if (result.quotaExceeded) {
+      quotaHit = true;
+      continue;
+    }
+
+    if (result.retryable) {
+      continue;
+    }
+  }
+
+  if (quotaHit) {
+    return NextResponse.json(
+      {
+        error: "Daily free limit reached. Try again tomorrow.",
+        code: "quota_exhausted",
+        failedModels
+      },
+      { status: 429 }
+    );
+  }
+
+  return NextResponse.json(
+    { error: lastError, failedModels },
+    { status: 502 }
+  );
+}
+
+async function requestGeminiPlan({
+  apiKey,
+  model,
+  prompt
+}: {
+  apiKey: string;
+  model: string;
+  prompt: string;
+}): Promise<{
+  plan?: Plan;
+  error?: string;
+  quotaExceeded?: boolean;
+  retryable?: boolean;
+}> {
+  try {
+    const response = await fetch(
+      `${GEMINI_API_BASE}/${model}:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              role: "user",
+              parts: [{ text: prompt }]
+            }
+          ],
+          generationConfig: {
+            responseMimeType: "application/json",
+            temperature: 0.85
+          }
+        })
+      }
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
-      return NextResponse.json(
-        { error: "Gemini request failed", detail: errorText },
-        { status: 502 }
-      );
+      const quotaExceeded =
+        response.status === 429 || errorText.includes("RESOURCE_EXHAUSTED");
+
+      return {
+        error: `Gemini request failed on ${model}`,
+        quotaExceeded,
+        retryable: quotaExceeded || response.status >= 500,
+      };
     }
 
     const payload = (await response.json()) as GeminiResponse;
@@ -84,25 +163,16 @@ export async function POST(request: Request) {
       payload.candidates?.[0]?.content?.parts
         ?.map((part) => part.text || "")
         .join("") || "";
-    let plan: Plan;
 
-    try {
-      plan = parsePlan(text);
-    } catch {
-      return NextResponse.json(
-        { error: "Gemini returned invalid JSON" },
-        { status: 502 }
-      );
-    }
-
-    return NextResponse.json(
-      mode === "content" ? { ...plan, tools: ["CapCut", "InShot", "DaVinci Resolve"] } : plan
-    );
+    return { plan: parsePlan(text) };
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Unexpected server error";
-
-    return NextResponse.json({ error: message }, { status: 500 });
+    return {
+      error:
+        error instanceof Error
+          ? `${model}: ${error.message}`
+          : `${model}: unexpected error`,
+      retryable: true
+    };
   }
 }
 
