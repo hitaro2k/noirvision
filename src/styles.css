@@ -782,8 +782,9 @@ button {
   position: fixed;
   inset: 0;
   z-index: 80;
-  overflow: hidden;
+  overflow: hidden auto;
   background: #020202;
+  overscroll-behavior: contain;
 }
 
 .nv-menu-ghost {
@@ -831,6 +832,7 @@ button {
   display: grid;
   grid-template-columns: 9rem 1fr;
   align-items: baseline;
+  min-width: 0;
   border: 0;
   border-top: 1px solid rgba(255,255,255,0.13);
   background: transparent;
@@ -842,6 +844,7 @@ button {
   letter-spacing: -0.08em;
   line-height: 0.86;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .nv-menu-inner nav button span {
@@ -1192,7 +1195,9 @@ button {
   .nv-menu-inner nav button {
     grid-template-columns: 1fr;
     gap: 0.35rem;
-    font-size: clamp(2.5rem, 15vw, 4.8rem);
+    font-size: clamp(2.15rem, 11.8vw, 4.1rem);
+    letter-spacing: -0.055em;
+    line-height: 0.9;
   }
 
   .nv-page-controls {
@@ -1226,6 +1231,29 @@ button {
 
   .nv-menu-button {
     font-size: 0.68rem;
+  }
+
+  .nv-close {
+    right: 0.9rem;
+    top: 0.9rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .nv-menu-inner {
+    width: calc(100% - 1.5rem);
+    align-content: start;
+    gap: 1.5rem;
+    padding: 5.2rem 0 1.75rem;
+  }
+
+  .nv-menu-inner nav {
+    gap: 0.2rem;
+  }
+
+  .nv-menu-inner nav button {
+    padding: 0.82rem 0;
+    font-size: clamp(2rem, 11vw, 3.2rem);
   }
 
   .nv-page {
