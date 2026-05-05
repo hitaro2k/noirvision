@@ -23,6 +23,93 @@ const LANGUAGES = ["RU", "UA", "ENG"];
 const TELEGRAM_URL = "https://t.me/selfhitaro";
 const pathIcons = [TrendingUp, Magnet, Video, ImageIcon, FileText, Rocket, RefreshCw];
 
+const productionModes = [
+  {
+    title: "High-volume performance mode",
+    text: "For iGaming, crypto, and UGC-heavy brands that need many variations fast."
+  },
+  {
+    title: "Premium motion mode",
+    text: "For brands that need fewer creatives, but each one should look more polished, cinematic, and less AI-generated."
+  }
+];
+
+const pricingSections = [
+  {
+    title: "A. iGaming / Crypto",
+    intro:
+      "For iGaming and crypto, I focus on high-volume AI-assisted creative production: fast video variations, UGC-style ads, offer push creatives, static batches, landing variations, and rapid testing angles.",
+    packs: [
+      {
+        title: "NoirLight Pack",
+        note: "Light first pack",
+        price: "$333-555",
+        items: ["3 video creatives", "5 static creatives", "3 hook variations", "1 landing / offer page", "basic resizing 9:16 / 4:5 / 1:1"]
+      },
+      {
+        title: "NoirBlack Pack",
+        note: "Middle pack",
+        price: "$777-1,444",
+        items: ["8-12 video creatives", "10-20 statics", "hook variations", "UGC / motion / slot trailer / app demo", "landing page adaptation", "weekly iteration based on feedback"]
+      },
+      {
+        title: "NoirDark Pack",
+        note: "Monthly performance pack",
+        price: "$2,555-6,666/mo",
+        items: ["30-60 creatives/month", "weekly batches", "UGC-style videos", "motion offer creatives", "static variations", "localization", "landing variations", "creative testing matrix"]
+      },
+      {
+        title: "NoirVoid Pack",
+        note: "Scale pack",
+        price: "$7,777-13,333+/mo",
+        items: ["80-150+ creatives/month", "multiple GEOs", "multiple offers", "rapid variants", "AI automation pipeline", "creative reporting"]
+      }
+    ]
+  },
+  {
+    title: "B. Beauty / E-commerce / Apps / Products - UGC Production",
+    intro: "UGC-style creative production for brands that need believable social proof, demos, reviews, unboxing and fast ad variations.",
+    packs: [
+      {
+        title: "UGC Starter Pack",
+        price: "$255-555",
+        items: ["3-5 UGC-style videos", "3 static creatives"]
+      },
+      {
+        title: "UGC Growth Pack",
+        price: "$777-1,555",
+        items: ["8-15 UGC-style videos", "5-10 static creatives", "multiple hooks", "product review / demo / unboxing / problem-solution"]
+      },
+      {
+        title: "Monthly UGC Batch",
+        price: "$1,555-3,555/mo",
+        items: ["25-60 UGC-style creatives/month", "weekly batches", "multiple products", "hook variations", "caption versions", "basic motion edits"]
+      }
+    ]
+  },
+  {
+    title: "C. Beauty / E-commerce / Apps / Products - Premium Motion / Cinematic",
+    intro: "Premium motion for product, app and brand visuals where polish matters more than raw creative volume.",
+    packs: [
+      {
+        title: "Single Premium Motion Video",
+        price: "from $155-333",
+        items: ["1 short product motion video", "20-30 sec", "basic cinematic/motion style"]
+      },
+      {
+        title: "Motion Starter Pack",
+        price: "$444-999",
+        items: ["2-3 premium motion videos", "3-5 static creatives", "product reveal / app promo / lifestyle motion"]
+      },
+      {
+        title: "Brand Motion Pack",
+        price: "$1,666-2,666",
+        items: ["5-8 premium motion videos", "5-10 static creatives", "cinematic product visuals", "clean brand storytelling", "social ad formats"]
+      }
+    ]
+  }
+];
+
 const caseAssets = [
   {
     id: "pack-1win-free-bonus",
@@ -38,40 +125,57 @@ const caseAssets = [
     ],
     videos: [
       {
-        title: "UGC Promo",
-        label: "Free bonus push",
-        description: "Short-form promo for the welcome/free bonus angle.",
+        title: "UGC App Review",
+        label: "Video 1 - trust angle",
+        description: "Creator-style app review built to create trust before the first-deposit offer.",
         url: "/watermarked/pack1winfreebonusENG/1W%20welcomebonus(1).mp4",
         poster: "/watermarked/pack1winfreebonusENG/welcomebonus_pic.png"
       },
       {
-        title: "Slot Review Promo",
-        label: "Thunder Gates slot angle",
+        title: "Thunder Gates Slot Trailer",
+        label: "Video 2 - entertainment angle",
         description: "Slot overview promo with the promo mechanic and slot-link CTA.",
         url:
           "/watermarked/pack1winfreebonusENG/openart-77283007ebbe215edc0bad4445dbbd03-de15e8c3-5852-4a74-8b31-0857106c1218_1777928543456_eb5b4ea4.mp4",
         poster: "/watermarked/pack1winfreebonusENG/thunderGates_pick.jpg"
       },
       {
-        title: "Video Slot 03",
-        label: "Reserved",
-        description: "Reserved place for the third promo video in this pack.",
-        pending: true
+        title: "Welcome Bonus Click Driver",
+        label: "Video 3 - direct-response angle",
+        description: "Reserved place for the direct-response welcome bonus click driver.",
+        url: "/watermarked/pack1winfreebonusENG/Welcome_Bonus_Click_1win.mp4",
+        poster: "/watermarked/pack1winfreebonusENG/welcomebonus_pic.png"
       }
     ],
     statics: [
-      { title: "Animated Slot Visual", src: "/watermarked/pack1winfreebonusENG/static/Animated%20Slot%20Visual.jpg" },
-      { title: "App Demo Static", src: "/watermarked/pack1winfreebonusENG/static/App%20Demo%20Static.jpg" },
-      { title: "Responsible Premium Brand", src: "/watermarked/pack1winfreebonusENG/static/Responsible%20Premium%20Brand.jpg" },
-      { title: "UGC Review Thumbnail", src: "/watermarked/pack1winfreebonusENG/static/UGC%20Review%20Thumbnail.jpg" },
-      { title: "Welcome Offer Explainer", src: "/watermarked/pack1winfreebonusENG/static/Welcome%20Offer%20Explainer.jpg" }
+      { title: "UGC thumbnail", src: "/watermarked/pack1winfreebonusENG/static/UGC%20Review%20Thumbnail.jpg" },
+      { title: "Welcome bonus static", src: "/watermarked/pack1winfreebonusENG/static/Welcome%20Offer%20Explainer.jpg" },
+      { title: "Thunder Gates static", src: "/watermarked/pack1winfreebonusENG/static/Animated%20Slot%20Visual.jpg" },
+      { title: "Join now static", src: "/watermarked/pack1winfreebonusENG/static/App%20Demo%20Static.jpg" },
+      { title: "First deposit bonus static", src: "/watermarked/pack1winfreebonusENG/static/Responsible%20Premium%20Brand.jpg" }
     ],
     hooks: [
       { title: "Hook A - Ontario angle", file: "Hook_A_Ontario.txt" },
       { title: "Hook B - Bonus mechanic", file: "Hook_B_Bonus.txt" },
       { title: "Hook C - App demo", file: "Hook_C_App_Demo.txt" }
     ],
-    cardMetrics: ["2/3 videos", "5 statics", "HTML landing", "3 hooks"]
+    packBrief: {
+      eyebrow: "NoirLight Pack",
+      title: "1Win Ontario - First Deposit Creative Pack",
+      goal: "Drive registrations and first deposits.",
+      offer: "Welcome Bonus up to $1,000 + 250 Free Spins on first deposit.",
+      deliverables: ["3 video creatives", "5 static creatives", "1 one-page landing", "3 hook variations"],
+      videos: [
+        "UGC App Review - trust angle",
+        "Thunder Gates Slot Trailer - entertainment angle",
+        "Welcome Bonus Click Driver - direct-response angle"
+      ],
+      statics: ["UGC thumbnail", "Welcome bonus static", "Thunder Gates static", "Join now static", "First deposit bonus static"],
+      landing: "One-page bonus landing focused on the first-deposit offer.",
+      summary:
+        "Delivered as a NoirLight Pack: fast first-deposit offer page, UGC/trust creative, entertainment angle, direct-response slot, static batch and hook variations."
+    },
+    cardMetrics: ["NoirLight", "3 videos", "5 statics", "landing + hooks"]
   },
   {
     id: "fitnerd-fitness-ai",
@@ -158,11 +262,11 @@ const translations = {
     },
     cases: [
       {
-        title: "1Win Welcome Bonus Offer",
-        input: "Welcome bonus for the first deposit in an online casino",
-        output: "Test pack: 3 video slots, HTML landing, 5 Facebook statics and 3 hook angles",
-        result: "A compact acquisition pack for bonus traffic: promo clips, Facebook statics, landing and hook angles.",
-        tags: ["iGaming", "Test Pack", "Free Bonus"],
+        title: "1Win Ontario - First Deposit Creative Pack",
+        input: "Welcome Bonus up to $1,000 + 250 Free Spins on the first deposit",
+        output: "NoirLight Pack: 3 video creatives, 5 statics, 1 landing / offer page and 3 hook variations",
+        result: "A compact first-deposit acquisition pack for Ontario: trust video, entertainment slot trailer, direct-response offer angle, statics, landing and hooks.",
+        tags: ["iGaming", "NoirLight Pack", "First Deposit"],
         built: [
           "main promo for free bonus traffic",
           "slot-review promo with slot-link CTA",
@@ -328,11 +432,11 @@ const translations = {
     },
     cases: [
       {
-        title: "1Win Welcome Bonus Offer",
+        title: "1Win Ontario - First Deposit Creative Pack",
         input: "Welcome bonus за первый депозит в онлайн-казино",
         output: "Тест-пак: 3 video slots, HTML-лендинг, 5 Facebook statics и 3 hook-угла",
         result: "Компактный acquisition pack под bonus-трафик: ролики, статики для Facebook, лендинг и hook-углы.",
-        tags: ["iGaming", "Test Pack", "Free Bonus"],
+        tags: ["iGaming", "NoirLight Pack", "First Deposit"],
         built: [
           "main promo под free bonus",
           "slot-review promo с CTA на слот",
@@ -498,11 +602,11 @@ const translations = {
     },
     cases: [
       {
-        title: "1Win Welcome Bonus Offer",
+        title: "1Win Ontario - First Deposit Creative Pack",
         input: "Welcome bonus за перший депозит в онлайн-казино",
         output: "Тест-пак: 3 video slots, HTML-лендинг, 5 Facebook statics і 3 hook-кути",
         result: "Компактний acquisition pack під bonus-трафік: ролики, статики для Facebook, лендинг і hook-кути.",
-        tags: ["iGaming", "Test Pack", "Free Bonus"],
+        tags: ["iGaming", "NoirLight Pack", "First Deposit"],
         built: [
           "main promo під free bonus",
           "slot-review promo з CTA на слот",
@@ -1035,40 +1139,87 @@ function StackPage({ t }) {
 }
 
 function PricingPage({ t }) {
+  const [activePricing, setActivePricing] = useState(0);
+  const activeSection = pricingSections[activePricing];
+  const goToPricing = (direction) => {
+    setActivePricing((current) => (current + direction + pricingSections.length) % pricingSections.length);
+  };
+
   return (
     <Page id="deals" className="nv-pricing-page">
       <div className="nv-page-heading compact">
         <p className="nv-eyebrow">{t.pricing.eyebrow}</p>
-        <h2>{t.pricing.title}</h2>
-        <p>{t.pricing.subtitle}</p>
+        <h2>Creative pack prices</h2>
+        <p>Separated pack pricing for iGaming / crypto, UGC production and premium motion.</p>
       </div>
       <div className="nv-pricing-layout">
-        <div className="nv-pack-grid">
-          {t.pricing.packs.map((pack) => (
-            <article key={pack.title} className="nv-price-pack">
-              <h3>{pack.title}</h3>
-              <strong>{pack.price}</strong>
-              <ul>
-                {pack.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+        <section className="nv-production-modes" aria-label="Production modes">
+          {productionModes.map((mode) => (
+            <article key={mode.title} className="nv-production-mode">
+              <span>{mode.title}</span>
+              <p>{mode.text}</p>
             </article>
           ))}
+        </section>
+        <div className="nv-pricing-switcher">
+          <div className="nv-pricing-tabs" role="tablist" aria-label="Pricing categories">
+            {pricingSections.map((section, index) => (
+              <button
+                key={section.title}
+                type="button"
+                role="tab"
+                aria-selected={activePricing === index}
+                className={activePricing === index ? "is-active" : ""}
+                onClick={() => setActivePricing(index)}
+              >
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {section.title.replace(/^[A-C]\.\s*/, "")}
+              </button>
+            ))}
+          </div>
+          <div className="nv-pricing-swap-controls">
+            <button type="button" onClick={() => goToPricing(-1)} aria-label="Previous pricing category">
+              <ArrowLeft size={16} />
+            </button>
+            <span>
+              {String(activePricing + 1).padStart(2, "0")} / {String(pricingSections.length).padStart(2, "0")}
+            </span>
+            <button type="button" onClick={() => goToPricing(1)} aria-label="Next pricing category">
+              <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
-        <div className="nv-rate-table">
-          <h3>{t.pricing.tableTitle}</h3>
-          <table>
-            <tbody>
-              {t.pricing.table.map(([format, price]) => (
-                <tr key={format}>
-                  <td>{format}</td>
-                  <td>{price}</td>
-                </tr>
+        <AnimatePresence mode="wait">
+          <motion.section
+            key={activeSection.title}
+            className="nv-pricing-section"
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -24 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+          >
+            <div className="nv-pricing-section-head">
+              <h3>{activeSection.title}</h3>
+              <p>{activeSection.intro}</p>
+            </div>
+            <div className="nv-pack-grid">
+              {activeSection.packs.map((pack) => (
+                <article key={pack.title} className="nv-price-pack">
+                  <div>
+                    <h4>{pack.title}</h4>
+                    {pack.note && <span>{pack.note}</span>}
+                  </div>
+                  <strong>{pack.price}</strong>
+                  <ul>
+                    {pack.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </article>
               ))}
-            </tbody>
-          </table>
-        </div>
+            </div>
+          </motion.section>
+        </AnimatePresence>
       </div>
     </Page>
   );
@@ -1162,6 +1313,56 @@ function CaseModal({ t, item, onClose }) {
               ))}
             </div>
           </div>
+          {item.packBrief && (
+            <section className="nv-pack-brief">
+              <div className="nv-pack-brief-title">
+                <p>{item.packBrief.eyebrow}</p>
+                <h3>{item.packBrief.title}</h3>
+              </div>
+              <div className="nv-pack-brief-grid">
+                <article className="is-wide">
+                  <span>Goal</span>
+                  <p>{item.packBrief.goal}</p>
+                </article>
+                <article className="is-wide">
+                  <span>Offer</span>
+                  <p>{item.packBrief.offer}</p>
+                </article>
+                <article>
+                  <span>Deliverables</span>
+                  <ul>
+                    {item.packBrief.deliverables.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article>
+                  <span>Videos</span>
+                  <ul>
+                    {item.packBrief.videos.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article>
+                  <span>Statics</span>
+                  <ul>
+                    {item.packBrief.statics.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article>
+                  <span>Landing</span>
+                  <p>{item.packBrief.landing}</p>
+                </article>
+                <article className="is-full">
+                  <span>What was done in NoirLight Pack</span>
+                  <p>{item.packBrief.summary}</p>
+                </article>
+              </div>
+            </section>
+          )}
           {hasPackMedia ? (
             <section className="nv-pack-section">
               <div className="nv-pack-section-head">
