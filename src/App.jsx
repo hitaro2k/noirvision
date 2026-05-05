@@ -235,9 +235,9 @@ const caseAssets = [
         poster: "/watermarked/pack1winfreebonusENG/CreatorUGC.jpg"
       },
       {
-        title: "Thunder Gates Slot Trailer",
+        title: "Tap to claim",
         label: "Video 2 - entertainment angle",
-        description: "Slot overview promo with the promo mechanic and slot-link CTA.",
+        description: "Registration flow promo showing how to claim the welcome bonus after sign-up.",
         url: "/watermarked/pack1winfreebonusENG/TapOffer1win.mp4",
         poster: "/watermarked/pack1winfreebonusENG/thunderGates_pick.jpg"
       },
@@ -269,7 +269,7 @@ const caseAssets = [
       deliverables: ["3 video creatives", "5 static creatives", "1 one-page landing", "3 hook variations"],
       videos: [
         "UGC App Review - trust angle",
-        "Thunder Gates Slot Trailer - entertainment angle",
+        "Tap to claim - welcome bonus registration flow",
         "Welcome Bonus Click Driver - direct-response angle"
       ],
       statics: ["UGC thumbnail", "Welcome bonus static", "Thunder Gates static", "Join now static", "First deposit bonus static"],
@@ -371,7 +371,7 @@ const translations = {
         tags: ["iGaming", "NoirLight Pack", "First Deposit"],
         built: [
           "main promo for free bonus traffic",
-          "slot-review promo with slot-link CTA",
+          "tap-to-claim promo for the registration bonus",
           "HTML landing page",
           "Facebook static set",
           "hook angle files"
@@ -541,7 +541,7 @@ const translations = {
         tags: ["iGaming", "NoirLight Pack", "First Deposit"],
         built: [
           "main promo под free bonus",
-          "slot-review promo с CTA на слот",
+          "tap-to-claim promo под registration bonus",
           "HTML landing page",
           "набор Facebook statics",
           "hook-файлы под углы захода"
@@ -711,7 +711,7 @@ const translations = {
         tags: ["iGaming", "NoirLight Pack", "First Deposit"],
         built: [
           "main promo під free bonus",
-          "slot-review promo з CTA на слот",
+          "tap-to-claim promo під registration bonus",
           "HTML landing page",
           "набір Facebook statics",
           "hook-файли під кути заходу"
