@@ -110,6 +110,113 @@ const pricingSections = [
   }
 ];
 
+const pricingContent = {
+  ENG: {
+    eyebrow: "PRICING",
+    title: "Creative pack prices",
+    subtitle: "Separated pack pricing for iGaming / crypto, UGC production and premium motion.",
+    productionModes,
+    sections: pricingSections
+  },
+  RU: {
+    eyebrow: "ЦЕНЫ",
+    title: "Цены на креативные паки",
+    subtitle: "Отдельные пакеты для iGaming / crypto, UGC-продакшена и premium motion.",
+    productionModes: [
+      {
+        title: "Режим быстрых вариаций",
+        text: "Для iGaming, crypto и UGC-heavy брендов, которым нужно быстро много вариаций."
+      },
+      {
+        title: "Режим premium motion",
+        text: "Для брендов, которым нужно меньше креативов, но каждый должен выглядеть более чисто, кинематографично и менее AI-generated."
+      }
+    ],
+    sections: [
+      {
+        title: "A. iGaming / Crypto",
+        intro:
+          "Для iGaming и crypto я делаю high-volume AI-assisted creative production: быстрые video variations, UGC-style ads, offer push creatives, static batches, landing variations и rapid testing angles.",
+        packs: [
+          {
+            title: "NoirLight Pack",
+            note: "Самый лёгкий первый пак",
+            price: "$333-555",
+            items: ["3 видео-креатива", "5 статичных креативов", "3 hook-вариации", "1 landing / offer page", "basic resizing 9:16 / 4:5 / 1:1"]
+          },
+          {
+            title: "NoirBlack Pack",
+            note: "Средний пак",
+            price: "$777-1,444",
+            items: ["8-12 видео-креативов", "10-20 статиков", "hook-вариации", "UGC / motion / slot trailer / app demo", "адаптация landing page", "еженедельная итерация по feedback"]
+          },
+          {
+            title: "NoirDark Pack",
+            note: "Сильный месячный пак",
+            price: "$2,555-6,666/mo",
+            items: ["30-60 креативов в месяц", "еженедельные batch-паки", "UGC-style videos", "motion offer creatives", "static variations", "localization", "landing variations", "creative testing matrix"]
+          },
+          {
+            title: "NoirVoid Pack",
+            note: "Scale pack",
+            price: "$7,777-13,333+/mo",
+            items: ["80-150+ креативов в месяц", "несколько GEO", "несколько offers", "быстрые variants", "AI automation pipeline", "creative reporting"]
+          }
+        ]
+      },
+      {
+        title: "B. Beauty / E-commerce / Apps / Products - UGC-продакшен",
+        intro: "UGC-style продакшен для брендов, которым нужны reviews, demos, unboxing, social proof и быстрые ad variations.",
+        packs: [
+          {
+            title: "UGC Starter Pack",
+            price: "$255-555",
+            items: ["3-5 UGC-style видео", "3 статичных креатива"]
+          },
+          {
+            title: "UGC Growth Pack",
+            price: "$777-1,555",
+            items: ["8-15 UGC-style видео", "5-10 статичных креативов", "несколько hooks", "product review / demo / unboxing / problem-solution"]
+          },
+          {
+            title: "Monthly UGC Batch",
+            price: "$1,555-3,555/mo",
+            items: ["25-60 UGC-style креативов в месяц", "еженедельные batch-паки", "несколько products", "hook variations", "caption versions", "basic motion edits"]
+          }
+        ]
+      },
+      {
+        title: "C. Beauty / E-commerce / Apps / Products - Premium Motion / Cinematic",
+        intro: "Premium motion для product, app и brand visuals, где важнее polish и cinematic look, а не максимальный объём.",
+        packs: [
+          {
+            title: "Single Premium Motion Video",
+            price: "from $155-333",
+            items: ["1 короткое product motion video", "20-30 сек", "basic cinematic/motion style"]
+          },
+          {
+            title: "Motion Starter Pack",
+            price: "$444-999",
+            items: ["2-3 premium motion videos", "3-5 статичных креативов", "product reveal / app promo / lifestyle motion"]
+          },
+          {
+            title: "Brand Motion Pack",
+            price: "$1,666-2,666",
+            items: ["5-8 premium motion videos", "5-10 статичных креативов", "cinematic product visuals", "clean brand storytelling", "social ad formats"]
+          }
+        ]
+      }
+    ]
+  },
+  UA: {
+    eyebrow: "ЦІНИ",
+    title: "Ціни на креативні паки",
+    subtitle: "Окремі пакети для iGaming / crypto, UGC-продакшену та premium motion.",
+    productionModes,
+    sections: pricingSections
+  }
+};
+
 const caseAssets = [
   {
     id: "pack-1win-free-bonus",
@@ -118,25 +225,20 @@ const caseAssets = [
     coverImage: "/watermarked/pack1winfreebonusENG/welcomebonus_pic.png",
     landingUrl: "/pack1winfreebonusENG/index.html",
     landingPreview: "/watermarked/pack1winfreebonusENG/landing1win.png",
-    landingScreens: [
-      "/watermarked/pack1winfreebonusENG/landing1win.png",
-      "/watermarked/pack1winfreebonusENG/thunderGates_pick.jpg",
-      "/watermarked/pack1winfreebonusENG/CreatorUGC.jpg"
-    ],
+    landingScreens: ["/watermarked/pack1winfreebonusENG/landing1win.png"],
     videos: [
       {
         title: "UGC App Review",
         label: "Video 1 - trust angle",
         description: "Creator-style app review built to create trust before the first-deposit offer.",
         url: "/watermarked/pack1winfreebonusENG/1W%20welcomebonus(1).mp4",
-        poster: "/watermarked/pack1winfreebonusENG/welcomebonus_pic.png"
+        poster: "/watermarked/pack1winfreebonusENG/CreatorUGC.jpg"
       },
       {
         title: "Thunder Gates Slot Trailer",
         label: "Video 2 - entertainment angle",
         description: "Slot overview promo with the promo mechanic and slot-link CTA.",
-        url:
-          "/watermarked/pack1winfreebonusENG/openart-77283007ebbe215edc0bad4445dbbd03-de15e8c3-5852-4a74-8b31-0857106c1218_1777928543456_eb5b4ea4.mp4",
+        url: "/watermarked/pack1winfreebonusENG/TapOffer1win.mp4",
         poster: "/watermarked/pack1winfreebonusENG/thunderGates_pick.jpg"
       },
       {
@@ -155,9 +257,9 @@ const caseAssets = [
       { title: "First deposit bonus static", src: "/watermarked/pack1winfreebonusENG/static/Responsible%20Premium%20Brand.jpg" }
     ],
     hooks: [
-      { title: "Hook A - Ontario angle", file: "Hook_A_Ontario.txt" },
-      { title: "Hook B - Bonus mechanic", file: "Hook_B_Bonus.txt" },
-      { title: "Hook C - App demo", file: "Hook_C_App_Demo.txt" }
+      { title: "Ontario players — this welcome bonus is worth a look.", file: "(1Hook)" },
+      { title: "The welcome bonus is one tap away.", file: "(2Hook)" },
+      { title: "I checked the 1Win app, and the bonus is easy to find.", file: "(3Hook)" }
     ],
     packBrief: {
       eyebrow: "NoirLight Pack",
@@ -339,9 +441,9 @@ const translations = {
       text: "Compact AI-first production stack for fast visuals, UGC logic, landing builds and creative iteration.",
       groups: [
         ["Strategy", "GPT-5.5", "Claude Opus 4.7", "Claude Sonnet 4.6"],
-        ["Web", "Codex", "Claude Code", "Next.js", "React", "Webflow"],
+        ["Web", "Codex", "Claude Code", "Vite", "Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel", "Webflow"],
         ["Image", "Midjourney", "GPT Image 2", "Nano Banana"],
-        ["Video", "Kling", "Higgsfield Cinema Studio", "Higgsfield Marketing Studio", "Runway", "Veo"],
+        ["Video", "Kling", "Higgsfield", "Runway", "Veo"],
         ["Automation", "Automated Wave", "Batch video generation", "Rapid variants"],
         ["UGC", "HeyGen", "AI UGC workflows", "Real creators"],
         ["Post", "Figma", "CapCut", "DaVinci Resolve"]
@@ -509,9 +611,9 @@ const translations = {
       text: "Компактный AI-first production stack для быстрых визуалов, UGC-логики, лендингов и итераций.",
       groups: [
         ["Strategy", "GPT-5.5", "Claude Opus 4.7", "Claude Sonnet 4.6"],
-        ["Web", "Codex", "Claude Code", "Next.js", "React", "Webflow"],
+        ["Web", "Codex", "Claude Code", "Vite", "Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel", "Webflow"],
         ["Image", "Midjourney", "GPT Image 2", "Nano Banana"],
-        ["Video", "Kling", "Higgsfield Cinema Studio", "Higgsfield Marketing Studio", "Runway", "Veo"],
+        ["Video", "Kling", "Higgsfield", "Runway", "Veo"],
         ["Automation", "Automated Wave", "быстрый batch видосов", "rapid variants"],
         ["UGC", "HeyGen", "AI UGC workflows", "Real creators"],
         ["Post", "Figma", "CapCut", "DaVinci Resolve"]
@@ -679,9 +781,9 @@ const translations = {
       text: "Компактний AI-first production stack для швидких візуалів, UGC-логіки, лендингів та ітерацій.",
       groups: [
         ["Strategy", "GPT-5.5", "Claude Opus 4.7", "Claude Sonnet 4.6"],
-        ["Web", "Codex", "Claude Code", "Next.js", "React", "Webflow"],
+        ["Web", "Codex", "Claude Code", "Vite", "Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel", "Webflow"],
         ["Image", "Midjourney", "GPT Image 2", "Nano Banana"],
-        ["Video", "Kling", "Higgsfield Cinema Studio", "Higgsfield Marketing Studio", "Runway", "Veo"],
+        ["Video", "Kling", "Higgsfield", "Runway", "Veo"],
         ["Automation", "Automated Wave", "швидкий batch відео", "rapid variants"],
         ["UGC", "HeyGen", "AI UGC workflows", "Real creators"],
         ["Post", "Figma", "CapCut", "DaVinci Resolve"]
@@ -856,7 +958,7 @@ function App() {
           <PathPage t={t} />
           <DirectionsPage t={t} />
           <StackPage t={t} />
-          <PricingPage t={t} />
+          <PricingPage t={t} language={language} />
           <ContactPage t={t} />
         </motion.div>
       </main>
@@ -1138,23 +1240,24 @@ function StackPage({ t }) {
   );
 }
 
-function PricingPage({ t }) {
+function PricingPage({ t, language }) {
   const [activePricing, setActivePricing] = useState(0);
-  const activeSection = pricingSections[activePricing];
+  const pricing = pricingContent[language] || pricingContent.ENG;
+  const activeSection = pricing.sections[activePricing] || pricing.sections[0];
   const goToPricing = (direction) => {
-    setActivePricing((current) => (current + direction + pricingSections.length) % pricingSections.length);
+    setActivePricing((current) => (current + direction + pricing.sections.length) % pricing.sections.length);
   };
 
   return (
     <Page id="deals" className="nv-pricing-page">
       <div className="nv-page-heading compact">
-        <p className="nv-eyebrow">{t.pricing.eyebrow}</p>
-        <h2>Creative pack prices</h2>
-        <p>Separated pack pricing for iGaming / crypto, UGC production and premium motion.</p>
+        <p className="nv-eyebrow">{pricing.eyebrow || t.pricing.eyebrow}</p>
+        <h2>{pricing.title}</h2>
+        <p>{pricing.subtitle}</p>
       </div>
       <div className="nv-pricing-layout">
         <section className="nv-production-modes" aria-label="Production modes">
-          {productionModes.map((mode) => (
+          {pricing.productionModes.map((mode) => (
             <article key={mode.title} className="nv-production-mode">
               <span>{mode.title}</span>
               <p>{mode.text}</p>
@@ -1163,7 +1266,7 @@ function PricingPage({ t }) {
         </section>
         <div className="nv-pricing-switcher">
           <div className="nv-pricing-tabs" role="tablist" aria-label="Pricing categories">
-            {pricingSections.map((section, index) => (
+            {pricing.sections.map((section, index) => (
               <button
                 key={section.title}
                 type="button"
@@ -1182,7 +1285,7 @@ function PricingPage({ t }) {
               <ArrowLeft size={16} />
             </button>
             <span>
-              {String(activePricing + 1).padStart(2, "0")} / {String(pricingSections.length).padStart(2, "0")}
+              {String(activePricing + 1).padStart(2, "0")} / {String(pricing.sections.length).padStart(2, "0")}
             </span>
             <button type="button" onClick={() => goToPricing(1)} aria-label="Next pricing category">
               <ArrowRight size={16} />
