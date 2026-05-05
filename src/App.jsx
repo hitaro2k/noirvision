@@ -379,7 +379,7 @@ const translations = {
       },
       {
         title: "Fitnerd FitnessAI",
-        input: "AI fitness assistant promo",
+        input: "AI tracker for introvert",
         output: "UGC promo video + live landing page",
         result: "Creator-style acquisition case for an AI fitness product.",
         tags: ["FitnessAI", "UGC", "Landing"],
