@@ -139,7 +139,7 @@ function Card({ children, className = "" }) {
 function SnapshotMock() {
   return (
     <div className="relative h-full w-full overflow-hidden bg-black" role="img" aria-label={HERO_IMAGE_ALT}>
-      <video className="h-full w-full object-cover" src="/videos/kiko_conturing.mp4" controls playsInline preload="metadata" />
+      <video className="h-full w-full object-cover" src="/watermarked/videos/kiko_conturing.mp4" controls playsInline preload="metadata" />
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#211814] to-transparent" />
       <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/90 p-4 backdrop-blur">
         <p className="font-bold text-[#211814]">“A soft sculpt in one minute — no harsh stripes.”</p>

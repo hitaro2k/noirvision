@@ -25,46 +25,95 @@ const pathIcons = [TrendingUp, Magnet, Video, ImageIcon, FileText, Rocket, Refre
 
 const caseAssets = [
   {
-    id: "fitnerd-fitness-ai",
+    id: "pack-1win-free-bonus",
     number: "001",
+    filters: ["all", "igaming"],
+    coverImage: "/watermarked/pack1winfreebonusENG/welcomebonus_pic.png",
+    landingUrl: "/pack1winfreebonusENG/index.html",
+    landingPreview: "/watermarked/pack1winfreebonusENG/landing1win.png",
+    landingScreens: [
+      "/watermarked/pack1winfreebonusENG/landing1win.png",
+      "/watermarked/pack1winfreebonusENG/thunderGates_pick.jpg",
+      "/watermarked/pack1winfreebonusENG/CreatorUGC.jpg"
+    ],
+    videos: [
+      {
+        title: "UGC Promo",
+        label: "Free bonus push",
+        description: "Short-form promo for the welcome/free bonus angle.",
+        url: "/watermarked/pack1winfreebonusENG/1W%20welcomebonus(1).mp4",
+        poster: "/watermarked/pack1winfreebonusENG/welcomebonus_pic.png"
+      },
+      {
+        title: "Slot Review Promo",
+        label: "Thunder Gates slot angle",
+        description: "Slot overview promo with the promo mechanic and slot-link CTA.",
+        url:
+          "/watermarked/pack1winfreebonusENG/openart-77283007ebbe215edc0bad4445dbbd03-de15e8c3-5852-4a74-8b31-0857106c1218_1777928543456_eb5b4ea4.mp4",
+        poster: "/watermarked/pack1winfreebonusENG/thunderGates_pick.jpg"
+      },
+      {
+        title: "Video Slot 03",
+        label: "Reserved",
+        description: "Reserved place for the third promo video in this pack.",
+        pending: true
+      }
+    ],
+    statics: [
+      { title: "Animated Slot Visual", src: "/watermarked/pack1winfreebonusENG/static/Animated%20Slot%20Visual.jpg" },
+      { title: "App Demo Static", src: "/watermarked/pack1winfreebonusENG/static/App%20Demo%20Static.jpg" },
+      { title: "Responsible Premium Brand", src: "/watermarked/pack1winfreebonusENG/static/Responsible%20Premium%20Brand.jpg" },
+      { title: "UGC Review Thumbnail", src: "/watermarked/pack1winfreebonusENG/static/UGC%20Review%20Thumbnail.jpg" },
+      { title: "Welcome Offer Explainer", src: "/watermarked/pack1winfreebonusENG/static/Welcome%20Offer%20Explainer.jpg" }
+    ],
+    hooks: [
+      { title: "Hook A - Ontario angle", file: "Hook_A_Ontario.txt" },
+      { title: "Hook B - Bonus mechanic", file: "Hook_B_Bonus.txt" },
+      { title: "Hook C - App demo", file: "Hook_C_App_Demo.txt" }
+    ],
+    cardMetrics: ["2/3 videos", "5 statics", "HTML landing", "3 hooks"]
+  },
+  {
+    id: "fitnerd-fitness-ai",
+    number: "002",
     filters: ["product", "ugc"],
-    videoUrl: "/videos/FItnerdUGCMain.mp4",
+    videoUrl: "/watermarked/videos/FItnerdUGCMain.mp4",
     landingUrl: "https://fitnerd-aiassistent.vercel.app/",
-    landingScreens: ["/landing/landimage/Fitnerdland1.png", "/landing/landimage/Fitnerdland2.png"]
+    landingScreens: ["/watermarked/landing/landimage/Fitnerdland1.png", "/watermarked/landing/landimage/Fitnerdland2.png"]
   },
   {
     id: "kiko-contouring-ugc",
-    number: "002",
+    number: "003",
     filters: ["beauty", "ugc", "product"],
-    videoUrl: "/videos/kiko_conturing.mp4",
-    phoneVideoUrl: "/videos/kiko_conturing.mp4",
+    videoUrl: "/watermarked/videos/kiko_conturing.mp4",
+    phoneVideoUrl: "/watermarked/videos/kiko_conturing.mp4",
     landingUrl: "/?landing=kiko",
     landingScreens: [
-      "/landing/landimage/kikoland1.png",
-      "/landing/landimage/kikoland2.png",
-      "/landing/landimage/kikoland3.png",
-      "/landing/landimage/kikoland4.png"
+      "/watermarked/landing/landimage/kikoland1.png",
+      "/watermarked/landing/landimage/kikoland2.png",
+      "/watermarked/landing/landimage/kikoland3.png",
+      "/watermarked/landing/landimage/kikoland4.png"
     ]
   },
   {
     id: "firstua-friend-bonus",
-    number: "003",
+    number: "004",
     filters: ["igaming"],
-    videoUrl: "/videos/BR10fr3000$.mp4",
+    videoUrl: "/watermarked/videos/BR10fr3000$.mp4",
     landingUrl: "/?landing=firstua",
     landingScreens: [
-      "/landing/landimage/firstBRfriend1.png",
-      "/landing/landimage/firstBRfriend2.png",
-      "/landing/landimage/firstBRfriend3.png"
+      "/watermarked/landing/landimage/firstBRfriend1.png",
+      "/watermarked/landing/landimage/firstBRfriend2.png",
+      "/watermarked/landing/landimage/firstBRfriend3.png"
     ]
   },
   {
     id: "patagonia-goretex-cinema",
-    number: "004",
+    number: "005",
     filters: ["product"],
-    videoUrl: "/videos/patagonia(final).mp4",
+    videoUrl: "/watermarked/videos/patagonia(final).mp4",
     landingUrl: "/?landing=patagonia",
-    landingScreens: ["/landing/landimage/patagonialand1.png", "/landing/landimage/patagonialand2.png"]
+    landingScreens: ["/watermarked/landing/landimage/patagonialand1.png", "/watermarked/landing/landimage/patagonialand2.png"]
   }
 ];
 
@@ -93,8 +142,8 @@ const translations = {
     },
     work: {
       eyebrow: "WORK",
-      title: "Live creative board",
-      intro: "Choose a category. Open a case to see video evidence, landing screens and the offer logic.",
+      title: "Test Pack Library",
+      intro: "Choose a category. Open a pack to see the videos, statics, landing and hook angles delivered as one test-ready set.",
       filters: [
         { id: "all", label: "All" },
         { id: "igaming", label: "iGaming" },
@@ -102,12 +151,26 @@ const translations = {
         { id: "ugc", label: "UGC" },
         { id: "product", label: "Product" }
       ],
-      open: "Open case",
+      open: "Open pack",
       raw: "Raw offer",
       output: "Output",
       result: "Result"
     },
     cases: [
+      {
+        title: "1Win Welcome Bonus Offer",
+        input: "Welcome bonus for the first deposit in an online casino",
+        output: "Test pack: 3 video slots, HTML landing, 5 Facebook statics and 3 hook angles",
+        result: "A compact acquisition pack for bonus traffic: promo clips, Facebook statics, landing and hook angles.",
+        tags: ["iGaming", "Test Pack", "Free Bonus"],
+        built: [
+          "main promo for free bonus traffic",
+          "slot-review promo with slot-link CTA",
+          "HTML landing page",
+          "Facebook static set",
+          "hook angle files"
+        ]
+      },
       {
         title: "Fitnerd FitnessAI",
         input: "AI fitness assistant promo",
@@ -214,10 +277,13 @@ const translations = {
       button: "Text on Telegram"
     },
     modal: {
-      case: "Case",
+      case: "Pack",
       raw: "Raw offer",
       built: "Built into",
       landing: "Landing screens",
+      videos: "Promo videos",
+      statics: "Facebook statics",
+      hooks: "Hooks",
       viewLanding: "View landing",
       request: "Request similar"
     }
@@ -246,8 +312,8 @@ const translations = {
     },
     work: {
       eyebrow: "WORK",
-      title: "Live creative board",
-      intro: "Выберите категорию. Откройте кейс, чтобы увидеть видео, скрины лендинга и логику оффера.",
+      title: "Библиотека тест-паков",
+      intro: "Выберите категорию. Откройте пак, чтобы увидеть видео, статики, лендинг и hook-углы как один готовый набор под тест.",
       filters: [
         { id: "all", label: "Все" },
         { id: "igaming", label: "iGaming" },
@@ -255,12 +321,26 @@ const translations = {
         { id: "ugc", label: "UGC" },
         { id: "product", label: "Product" }
       ],
-      open: "Открыть кейс",
+      open: "Открыть пак",
       raw: "Оффер",
       output: "Выход",
       result: "Результат"
     },
     cases: [
+      {
+        title: "1Win Welcome Bonus Offer",
+        input: "Welcome bonus за первый депозит в онлайн-казино",
+        output: "Тест-пак: 3 video slots, HTML-лендинг, 5 Facebook statics и 3 hook-угла",
+        result: "Компактный acquisition pack под bonus-трафик: ролики, статики для Facebook, лендинг и hook-углы.",
+        tags: ["iGaming", "Test Pack", "Free Bonus"],
+        built: [
+          "main promo под free bonus",
+          "slot-review promo с CTA на слот",
+          "HTML landing page",
+          "набор Facebook statics",
+          "hook-файлы под углы захода"
+        ]
+      },
       {
         title: "Fitnerd FitnessAI",
         input: "Промо AI fitness assistant",
@@ -367,10 +447,13 @@ const translations = {
       button: "Написать в Telegram"
     },
     modal: {
-      case: "Кейс",
+      case: "Пак",
       raw: "Оффер",
       built: "Собрали в",
       landing: "Скрины лендинга",
+      videos: "Promo-видео",
+      statics: "Статики для Facebook",
+      hooks: "Hooky",
       viewLanding: "Открыть лендинг",
       request: "Заказать похожее"
     }
@@ -399,8 +482,8 @@ const translations = {
     },
     work: {
       eyebrow: "WORK",
-      title: "Live creative board",
-      intro: "Оберіть категорію. Відкрийте кейс, щоб побачити відео, скрини лендинга і логіку оффера.",
+      title: "Бібліотека тест-паків",
+      intro: "Оберіть категорію. Відкрийте пак, щоб побачити відео, статики, лендинг і hook-кути як один готовий набір під тест.",
       filters: [
         { id: "all", label: "Усі" },
         { id: "igaming", label: "iGaming" },
@@ -408,12 +491,26 @@ const translations = {
         { id: "ugc", label: "UGC" },
         { id: "product", label: "Product" }
       ],
-      open: "Відкрити кейс",
+      open: "Відкрити пак",
       raw: "Оффер",
       output: "Вихід",
       result: "Результат"
     },
     cases: [
+      {
+        title: "1Win Welcome Bonus Offer",
+        input: "Welcome bonus за перший депозит в онлайн-казино",
+        output: "Тест-пак: 3 video slots, HTML-лендинг, 5 Facebook statics і 3 hook-кути",
+        result: "Компактний acquisition pack під bonus-трафік: ролики, статики для Facebook, лендинг і hook-кути.",
+        tags: ["iGaming", "Test Pack", "Free Bonus"],
+        built: [
+          "main promo під free bonus",
+          "slot-review promo з CTA на слот",
+          "HTML landing page",
+          "набір Facebook statics",
+          "hook-файли під кути заходу"
+        ]
+      },
       {
         title: "Fitnerd FitnessAI",
         input: "Промо AI fitness assistant",
@@ -520,10 +617,13 @@ const translations = {
       button: "Написати в Telegram"
     },
     modal: {
-      case: "Кейс",
+      case: "Пак",
       raw: "Оффер",
       built: "Зібрали в",
       landing: "Скрини лендинга",
+      videos: "Promo-відео",
+      statics: "Статики для Facebook",
+      hooks: "Hooky",
       viewLanding: "Відкрити лендинг",
       request: "Замовити схоже"
     }
@@ -812,7 +912,18 @@ function WorkBoard({ t, cases, setActiveCase }) {
       </div>
       <div className="nv-case-grid">
         {filteredCases.map((item) => (
-          <button key={item.id} className="nv-case-card" type="button" onClick={() => setActiveCase(item)}>
+          <button
+            key={item.id}
+            className={`nv-case-card ${item.coverImage ? "has-cover" : ""}`}
+            type="button"
+            onClick={() => setActiveCase(item)}
+          >
+            {item.coverImage && (
+              <span className="nv-case-cover">
+                <img src={item.coverImage} alt="" />
+                <span>{item.filters[0]} pack</span>
+              </span>
+            )}
             <span className="nv-case-number">CASE {item.number}</span>
             <span className="nv-case-title">{item.title}</span>
             <span className="nv-case-line">
@@ -826,6 +937,13 @@ function WorkBoard({ t, cases, setActiveCase }) {
                 <em key={tag}>{tag}</em>
               ))}
             </span>
+            {item.cardMetrics && (
+              <span className="nv-pack-metrics">
+                {item.cardMetrics.map((metric) => (
+                  <em key={metric}>{metric}</em>
+                ))}
+              </span>
+            )}
             <span className="nv-open-case">
               {t.work.open}
               <ArrowUpRight size={15} />
@@ -1012,6 +1130,17 @@ function CaseModal({ t, item, onClose }) {
     return () => window.removeEventListener("keydown", close);
   }, [lightbox, onClose]);
 
+  const videos = item.videos || [
+    {
+      title: item.title,
+      label: t.modal.videos,
+      description: item.result,
+      url: item.videoUrl,
+      poster: item.landingScreens?.[0]
+    }
+  ];
+  const hasPackMedia = Boolean(item.videos?.length || item.statics?.length || item.hooks?.length || item.landingPreview);
+
   return createPortal(
     <>
       <motion.div className="nv-modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -1033,7 +1162,35 @@ function CaseModal({ t, item, onClose }) {
               ))}
             </div>
           </div>
-          <video className="nv-modal-video" src={item.videoUrl} controls playsInline preload="metadata" />
+          {hasPackMedia ? (
+            <section className="nv-pack-section">
+              <div className="nv-pack-section-head">
+                <p>{t.modal.videos}</p>
+                <span>{videos.filter((video) => !video.pending).length}/{videos.length}</span>
+              </div>
+              <div className="nv-pack-video-grid">
+                {videos.map((video) => (
+                  <article key={video.title} className={video.pending ? "is-pending" : ""}>
+                    {video.pending ? (
+                      <div className="nv-video-placeholder">
+                        <Video size={24} />
+                        <span>{video.label}</span>
+                      </div>
+                    ) : (
+                      <video src={video.url} poster={video.poster} controls playsInline preload="metadata" />
+                    )}
+                    <div>
+                      <span>{video.label}</span>
+                      <h3>{video.title}</h3>
+                      <p>{video.description}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : (
+            <video className="nv-modal-video" src={item.videoUrl} controls playsInline preload="metadata" />
+          )}
           <div className="nv-modal-info">
             <article>
               <p>{t.modal.raw}</p>
@@ -1048,6 +1205,57 @@ function CaseModal({ t, item, onClose }) {
               </ul>
             </article>
           </div>
+          {item.landingPreview && (
+            <section className="nv-pack-section">
+              <div className="nv-pack-section-head">
+                <p>{t.modal.landing}</p>
+                <a href={item.landingUrl} target="_blank" rel="noreferrer">
+                  {t.modal.viewLanding}
+                  <ExternalLink size={15} />
+                </a>
+              </div>
+              <a className="nv-pack-landing" href={item.landingUrl} target="_blank" rel="noreferrer">
+                <img src={item.landingPreview} alt={`${item.title} landing preview`} />
+                <span>
+                  HTML landing
+                  <ArrowUpRight size={16} />
+                </span>
+              </a>
+            </section>
+          )}
+          {item.statics && (
+            <section className="nv-pack-section">
+              <div className="nv-pack-section-head">
+                <p>{t.modal.statics}</p>
+                <span>{item.statics.length}</span>
+              </div>
+              <div className="nv-static-grid">
+                {item.statics.map((staticItem) => (
+                  <button key={staticItem.src} type="button" onClick={() => setLightbox(staticItem.src)}>
+                    <img src={staticItem.src} alt={staticItem.title} />
+                    <span>{staticItem.title}</span>
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
+          {item.hooks && (
+            <section className="nv-pack-section">
+              <div className="nv-pack-section-head">
+                <p>{t.modal.hooks}</p>
+                <span>{item.hooks.length}</span>
+              </div>
+              <div className="nv-hook-grid">
+                {item.hooks.map((hook) => (
+                  <article key={hook.file}>
+                    <FileText size={18} />
+                    <h3>{hook.title}</h3>
+                    <p>{hook.file}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
           <div className="nv-landing-strip">
             <h3>{t.modal.landing}</h3>
             <div>

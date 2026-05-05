@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1Win Ontario Creative Pack</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #ffffff;
+        --muted: #a8b3c6;
+        --soft: rgba(255, 255, 255, 0.08);
+        --line: rgba(255, 255, 255, 0.14);
+        --cyan: #31d9ff;
+        --blue: #1b71ff;
+        --lime: #a7ff5a;
+        --gold: #ffc14d;
+        --rose: #ff6f8f;
+        --bg: #030711;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 82% 8%, rgba(49, 217, 255, 0.28), transparent 28rem),
+          radial-gradient(circle at 14% 78%, rgba(255, 193, 77, 0.16), transparent 24rem),
+          linear-gradient(180deg, #071528 0%, #030711 58%, #02040a 100%);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .page {
+        position: relative;
+        isolation: isolate;
+        min-height: 100vh;
+      }
+
+      .page::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 64px 64px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 80%);
+      }
+
+      .page::after {
+        content: "";
+        position: fixed;
+        inset: auto 0 0;
+        z-index: -1;
+        height: 36vh;
+        pointer-events: none;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.58), transparent);
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 22px 0;
+      }
+
+      .brand {
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        font-weight: 950;
+        font-style: italic;
+        line-height: 0.85;
+        letter-spacing: 0;
+      }
+
+      .brand span {
+        color: var(--cyan);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        min-height: 42px;
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: #d9f7ff;
+        font-size: 0.88rem;
+        font-weight: 800;
+        backdrop-filter: blur(16px);
+        white-space: nowrap;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 50px;
+        padding: 0 20px;
+        border: 0;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--cyan), var(--lime));
+        color: #03111b;
+        font-size: 0.98rem;
+        font-weight: 950;
+        box-shadow: 0 18px 42px rgba(49, 217, 255, 0.24);
+        transition:
+          transform 180ms ease,
+          filter 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        filter: saturate(1.08) brightness(1.04);
+        box-shadow: 0 22px 50px rgba(167, 255, 90, 0.19);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+        align-items: center;
+        gap: clamp(28px, 5vw, 70px);
+        min-height: calc(100vh - 104px);
+        padding: 10px 0 44px;
+      }
+
+      .hero-copy {
+        animation: rise 640ms ease both;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 18px;
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 193, 77, 0.34);
+        border-radius: 999px;
+        background: rgba(255, 193, 77, 0.12);
+        color: #ffe3a6;
+        font-size: 0.86rem;
+        font-weight: 900;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0;
+        font-size: clamp(3.1rem, 6.6vw, 6.35rem);
+        line-height: 0.92;
+        letter-spacing: 0;
+        font-weight: 950;
+      }
+
+      h1 span {
+        color: var(--cyan);
+        text-shadow: 0 0 38px rgba(49, 217, 255, 0.36);
+      }
+
+      .lead {
+        max-width: 610px;
+        margin: 18px 0 0;
+        color: #d4dcea;
+        font-size: clamp(1rem, 1.45vw, 1.15rem);
+        line-height: 1.58;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .button.secondary {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        box-shadow: none;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        max-width: 560px;
+        margin-top: 24px;
+      }
+
+      .metric {
+        min-height: 88px;
+        padding: 15px;
+        border: 1px solid rgba(49, 217, 255, 0.18);
+        border-radius: 18px;
+        background: rgba(9, 28, 48, 0.72);
+        backdrop-filter: blur(14px);
+      }
+
+      .metric small {
+        display: block;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 750;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 6px;
+        font-size: clamp(1.12rem, 2.1vw, 1.45rem);
+        line-height: 1.05;
+      }
+
+      .disclaimer {
+        max-width: 620px;
+        margin: 18px 0 0;
+        color: rgba(168, 179, 198, 0.74);
+        font-size: 0.76rem;
+        line-height: 1.55;
+      }
+
+      .showcase {
+        position: relative;
+        min-height: 680px;
+        transform: translateX(-18px);
+        animation: floatIn 760ms 90ms ease both;
+      }
+
+      .phone-card {
+        position: absolute;
+        overflow: hidden;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.075);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+        backdrop-filter: blur(18px);
+        transform: translateZ(0);
+        transition:
+          transform 260ms ease,
+          border-color 260ms ease,
+          box-shadow 260ms ease;
+      }
+
+      .phone-card:hover {
+        border-color: rgba(49, 217, 255, 0.58);
+        box-shadow: 0 36px 90px rgba(49, 217, 255, 0.16), 0 22px 58px rgba(0, 0, 0, 0.42);
+      }
+
+      .phone-card img {
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+        object-fit: cover;
+        transition: transform 420ms ease;
+      }
+
+      .phone-card:hover img {
+        transform: scale(1.035);
+      }
+
+      .phone-card.creator {
+        top: 10px;
+        right: -4%;
+        width: 47%;
+        aspect-ratio: 9 / 16;
+        transform: rotate(3deg);
+        z-index: 3;
+      }
+
+      .phone-card.creator:hover {
+        transform: translateY(-9px) rotate(1deg);
+      }
+
+      .phone-card.bonus {
+        top: 84px;
+        left: -2%;
+        width: 50%;
+        aspect-ratio: 1;
+        transform: rotate(-4deg);
+        z-index: 1;
+      }
+
+      .phone-card.bonus:hover {
+        transform: translateY(-9px) rotate(-1deg);
+      }
+
+      .phone-card.thunder {
+        left: 24%;
+        bottom: 4px;
+        width: 48%;
+        aspect-ratio: 9 / 16;
+        transform: rotate(2deg);
+        z-index: 2;
+      }
+
+      .phone-card.thunder:hover {
+        transform: translateY(-10px) rotate(0deg);
+      }
+
+      .phone-card.thunder img {
+        object-position: top center;
+      }
+
+      .tag {
+        position: absolute;
+        left: 22px;
+        bottom: 22px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        max-width: calc(100% - 44px);
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.56);
+        color: #ffffff;
+        font-size: 0.86rem;
+        font-weight: 950;
+        line-height: 1.15;
+        backdrop-filter: blur(14px);
+      }
+
+      .tag .tag-copy {
+        display: grid;
+        gap: 3px;
+      }
+
+      .tag em {
+        color: rgba(232, 237, 247, 0.78);
+        font-size: 0.68rem;
+        font-style: normal;
+        font-weight: 800;
+      }
+
+      .tag.top {
+        top: 22px;
+        bottom: auto;
+      }
+
+      .icon {
+        width: 18px;
+        height: 18px;
+        flex: 0 0 auto;
+      }
+
+      .gallery-band {
+        padding: 16px 0 76px;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 22px;
+      }
+
+      .section-head h2 {
+        max-width: 760px;
+        margin: 0;
+        font-size: clamp(2rem, 4.2vw, 4.5rem);
+        line-height: 0.96;
+        letter-spacing: 0;
+        font-weight: 950;
+      }
+
+      .section-head p {
+        max-width: 330px;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .creative-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .creative-card {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 0.78;
+        min-height: 430px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #08111f;
+        box-shadow: 0 20px 58px rgba(0, 0, 0, 0.28);
+        transform: translateZ(0);
+        transition:
+          transform 240ms ease,
+          border-color 240ms ease,
+          box-shadow 240ms ease;
+      }
+
+      .creative-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(49, 217, 255, 0.5);
+        box-shadow: 0 30px 76px rgba(0, 0, 0, 0.38);
+      }
+
+      .creative-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          linear-gradient(180deg, transparent 32%, rgba(0, 0, 0, 0.2) 58%, rgba(0, 0, 0, 0.82) 100%),
+          linear-gradient(110deg, rgba(255, 255, 255, 0.18), transparent 34%);
+        opacity: 0.86;
+        pointer-events: none;
+      }
+
+      .creative-card::after {
+        content: "";
+        position: absolute;
+        inset: -40% auto auto -70%;
+        z-index: 2;
+        width: 55%;
+        height: 180%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+        transform: rotate(18deg);
+        transition: left 580ms ease;
+        pointer-events: none;
+      }
+
+      .creative-card:hover::after {
+        left: 118%;
+      }
+
+      .creative-card img {
+        width: 100%;
+        height: 100%;
+        min-height: 430px;
+        object-fit: cover;
+        transition:
+          transform 520ms ease,
+          filter 520ms ease;
+      }
+
+      .creative-card:hover img {
+        transform: scale(1.055);
+        filter: saturate(1.12) contrast(1.04);
+      }
+
+      .creative-card.bonus-card img {
+        object-position: center;
+      }
+
+      .creative-card.thunder-card img,
+      .creative-card.creator-card img {
+        object-position: top center;
+      }
+
+      .card-copy {
+        position: absolute;
+        inset: auto 0 0;
+        z-index: 3;
+        padding: 24px;
+      }
+
+      .card-copy .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        padding: 8px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        font-size: 0.72rem;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .card-copy h3 {
+        margin: 0;
+        font-size: clamp(1.45rem, 2.4vw, 2rem);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .card-copy p {
+        margin: 10px 0 0;
+        color: rgba(232, 237, 247, 0.82);
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      .destination {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 16px;
+        color: #dffbff;
+        font-size: 0.82rem;
+        font-weight: 950;
+      }
+
+      .footer-line {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 22px 0 34px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(168, 179, 198, 0.72);
+        font-size: 0.78rem;
+        line-height: 1.5;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes floatIn {
+        from {
+          opacity: 0;
+          transform: translateY(16px) scale(0.985);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 1ms !important;
+          scroll-behavior: auto !important;
+          transition-duration: 1ms !important;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding-bottom: 34px;
+        }
+
+        .showcase {
+          min-height: 620px;
+          width: min(620px, 100%);
+          margin: 0 auto;
+        }
+
+        .section-head {
+          align-items: start;
+          flex-direction: column;
+        }
+
+        .creative-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .creative-card,
+        .creative-card img {
+          min-height: 480px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .shell {
+          width: min(100% - 22px, 1180px);
+        }
+
+        .nav {
+          align-items: flex-start;
+          padding-top: 16px;
+        }
+
+        .nav-actions {
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 8px;
+        }
+
+        .pill {
+          min-height: 34px;
+          padding: 8px 10px;
+          font-size: 0.72rem;
+        }
+
+        .button {
+          min-height: 44px;
+          padding: 0 14px;
+          border-radius: 14px;
+          font-size: 0.9rem;
+        }
+
+        h1 {
+          font-size: clamp(3.05rem, 18vw, 5.4rem);
+        }
+
+        .lead {
+          line-height: 1.55;
+        }
+
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .metric {
+          min-height: 74px;
+        }
+
+        .showcase {
+          min-height: 570px;
+        }
+
+        .phone-card.creator {
+          right: 0;
+          width: 54%;
+        }
+
+        .phone-card.bonus {
+          left: 0;
+          width: 53%;
+        }
+
+        .phone-card.thunder {
+          left: 11%;
+          width: 58%;
+        }
+
+        .tag {
+          left: 14px;
+          right: 14px;
+          bottom: 14px;
+          max-width: none;
+          padding: 9px 10px;
+          border-radius: 14px;
+          font-size: 0.74rem;
+        }
+
+        .tag.top {
+          top: 14px;
+        }
+
+        .creative-card,
+        .creative-card img {
+          min-height: 420px;
+        }
+
+        .card-copy {
+          padding: 20px;
+        }
+
+        .footer-line {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <nav class="shell nav" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="1Win home"><span>1</span>win</a>
+        <div class="nav-actions">
+          <div class="pill">Ontario - 19+</div>
+          <a class="button" href="https://1win.ca/welcome-bonus">Get bonus</a>
+        </div>
+      </nav>
+
+      <section class="shell hero" id="top">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="8" width="18" height="13" rx="2"></rect>
+              <path d="M12 8v13"></path>
+              <path d="M3 12h18"></path>
+              <path d="M7.5 8C5.8 8 5 7 5 5.9 5 4.8 5.9 4 7 4c2.4 0 5 4 5 4H7.5z"></path>
+              <path d="M16.5 8C18.2 8 19 7 19 5.9 19 4.8 18.1 4 17 4c-2.4 0-5 4-5 4h4.5z"></path>
+            </svg>
+            Welcome bonus for new players
+          </div>
+
+          <h1>Get up to <span>$1,000</span> + 250 Free Spins</h1>
+          <p class="lead">
+            Three campaign-ready visuals for Ontario traffic: creator UGC, Thunder Gates,
+            and the welcome bonus offer.
+          </p>
+
+          <div class="cta-row">
+            <a class="button" href="https://1win.ca/welcome-bonus">
+              Claim bonus
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14"></path>
+                <path d="M13 5l7 7-7 7"></path>
+              </svg>
+            </a>
+            <a class="button secondary" href="https://1win.ca/casino/thunder-gates">Thunder Gates</a>
+          </div>
+
+          <div class="metrics" aria-label="Offer highlights">
+            <div class="metric">
+              <small>Bonus</small>
+              <strong>$1,000</strong>
+            </div>
+            <div class="metric">
+              <small>Free Spins</small>
+              <strong>250 FS</strong>
+            </div>
+            <div class="metric">
+              <small>Region</small>
+              <strong>Ontario</strong>
+            </div>
+          </div>
+
+          <p class="disclaimer">
+            19+. Ontario only. Terms apply. Play responsibly. Offer availability and eligibility may vary.
+          </p>
+        </div>
+
+        <div class="showcase" aria-label="1Win creative previews">
+          <a class="phone-card creator" href="https://1win.ca/creator-video">
+            <img src="/watermarked/pack1winfreebonusENG/CreatorUGC.jpg" alt="One Win Creator showing the app" />
+            <span class="tag">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+              <span class="tag-copy">
+                One Win Creator
+                <em>Opens creator video</em>
+              </span>
+            </span>
+          </a>
+
+          <a class="phone-card bonus" href="https://1win.ca/welcome-bonus">
+            <img src="/watermarked/pack1winfreebonusENG/welcomebonus_pic.png" alt="One Win Welcome Bonus" />
+            <span class="tag">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="8" width="18" height="13" rx="2"></rect>
+                <path d="M12 8v13"></path>
+                <path d="M3 12h18"></path>
+                <path d="M7.5 8C5.8 8 5 7 5 5.9 5 4.8 5.9 4 7 4c2.4 0 5 4 5 4H7.5z"></path>
+                <path d="M16.5 8C18.2 8 19 7 19 5.9 19 4.8 18.1 4 17 4c-2.4 0-5 4-5 4h4.5z"></path>
+              </svg>
+              <span class="tag-copy">
+                One Win Welcome Bonus
+                <em>Opens welcome bonus</em>
+              </span>
+            </span>
+          </a>
+
+          <a class="phone-card thunder" href="https://1win.ca/casino/thunder-gates">
+            <img src="/watermarked/pack1winfreebonusENG/thunderGates_pick.jpg" alt="One Win Thunder Gates" />
+            <span class="tag top">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"></path>
+              </svg>
+              <span class="tag-copy">
+                One Win Thunder Gates
+                <em>Opens Thunder Gates slot</em>
+              </span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="shell footer-line">
+        <span>1Win Ontario Creative Pack</span>
+        <span>19+. Terms apply. Play responsibly.</span>
+      </footer>
+    </main>
+  </body>
+</html>
