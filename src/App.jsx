@@ -219,51 +219,51 @@ const pricingContent = {
 
 const caseAssets = [
   {
-    id: "pack-1win-free-bonus",
+    id: "pack-bluespin-ontario",
     number: "001",
     filters: ["all", "igaming"],
-    coverImage: "/watermarked/pack1winfreebonusENG/welcomebonus_pic.png",
+    coverImage: "/watermarked/BluePrint/openart-gpt-image-2-edit-1_1778061237828_c85494be.jpg",
     landingUrl: "/pack1winfreebonusENG/index.html",
-    landingPreview: "/watermarked/pack1winfreebonusENG/landing1win.png",
-    landingScreens: ["/watermarked/pack1winfreebonusENG/landing1win.png"],
+    landingPreview: "/watermarked/BluePrint/landingBlueSpin.png",
+    landingScreens: ["/watermarked/BluePrint/landingBlueSpin.png"],
     videos: [
       {
         title: "UGC App Review",
         label: "Video 1 - trust angle",
         description: "Creator-style app review built to create trust before the first-deposit offer.",
-        url: "/watermarked/pack1winfreebonusENG/1W%20welcomebonus(1).mp4",
-        poster: "/watermarked/pack1winfreebonusENG/CreatorUGC.jpg"
+        url: "/watermarked/BluePrint/BlueSpin_welcomebonus.mp4",
+        poster: "/watermarked/BluePrint/bluespin_creator.jpg"
       },
       {
         title: "Tap to claim",
         label: "Video 2 - entertainment angle",
         description: "Registration flow promo showing how to claim the welcome bonus after sign-up.",
-        url: "/watermarked/pack1winfreebonusENG/TapOffer1win.mp4",
-        poster: "/watermarked/pack1winfreebonusENG/thunderGates_pick.jpg"
+        url: "/watermarked/BluePrint/TapOfferBluePrint.mp4",
+        poster: "/watermarked/BluePrint/welcomebonus_pic.png"
       },
       {
         title: "Welcome Bonus Click Driver",
         label: "Video 3 - direct-response angle",
         description: "Reserved place for the direct-response welcome bonus click driver.",
-        url: "/watermarked/pack1winfreebonusENG/Welcome_Bonus_Click_1win.mp4",
-        poster: "/watermarked/pack1winfreebonusENG/welcomebonus_pic.png"
+        url: "/watermarked/BluePrint/WelcomeBonusClick_BLueSpin.mp4",
+        poster: "/watermarked/BluePrint/welcomebonus_pic.png"
       }
     ],
     statics: [
-      { title: "UGC thumbnail", src: "/watermarked/pack1winfreebonusENG/static/UGC%20Review%20Thumbnail.jpg" },
-      { title: "Welcome bonus static", src: "/watermarked/pack1winfreebonusENG/static/Welcome%20Offer%20Explainer.jpg" },
-      { title: "Thunder Gates static", src: "/watermarked/pack1winfreebonusENG/static/Animated%20Slot%20Visual.jpg" },
-      { title: "Join now static", src: "/watermarked/pack1winfreebonusENG/static/App%20Demo%20Static.jpg" },
-      { title: "First deposit bonus static", src: "/watermarked/pack1winfreebonusENG/static/Responsible%20Premium%20Brand.jpg" }
+      { title: "UGC thumbnail", src: "/watermarked/BluePrint/Static/openart-gpt-image-2-1_1778059964840_6f2007f4.jpg" },
+      { title: "Welcome bonus static", src: "/watermarked/BluePrint/Static/openart-gpt-image-2-edit-1_1778060075605_f027477c.jpg" },
+      { title: "Top offer static", src: "/watermarked/BluePrint/Static/openart-gpt-image-2-edit-1_1778060326541_047280b2.jpg" },
+      { title: "Join now static", src: "/watermarked/BluePrint/Static/openart-gpt-image-2-edit-1_1778060343137_38e7bf83.jpg" },
+      { title: "First deposit bonus static", src: "/watermarked/BluePrint/Static/openart-gpt-image-2-edit-1_1778060366854_c51ff939.jpg" }
     ],
     hooks: [
       { title: "Ontario players — this welcome bonus is worth a look.", file: "(1Hook)" },
       { title: "The welcome bonus is one tap away.", file: "(2Hook)" },
-      { title: "I checked the 1Win app, and the bonus is easy to find.", file: "(3Hook)" }
+      { title: "I checked the BlueSpin app, and the bonus is easy to find.", file: "(3Hook)" }
     ],
     packBrief: {
       eyebrow: "NoirLight Pack",
-      title: "1Win Ontario - First Deposit Creative Pack",
+      title: "BlueSpin Ontario Creative Pack",
       goal: "Drive registrations and first deposits.",
       offer: "Welcome Bonus up to $1,000 + 250 Free Spins on first deposit.",
       deliverables: ["3 video creatives", "5 static creatives", "1 one-page landing", "3 hook variations"],
@@ -272,10 +272,10 @@ const caseAssets = [
         "Tap to claim - welcome bonus registration flow",
         "Welcome Bonus Click Driver - direct-response angle"
       ],
-      statics: ["UGC thumbnail", "Welcome bonus static", "Thunder Gates static", "Join now static", "First deposit bonus static"],
+      statics: ["UGC thumbnail", "Welcome bonus static", "Top offer static", "Join now static", "First deposit bonus static"],
       landing: "One-page bonus landing focused on the first-deposit offer.",
       summary:
-        "Delivered as a NoirLight Pack: fast first-deposit offer page, UGC/trust creative, entertainment angle, direct-response slot, static batch and hook variations."
+        "Delivered as a NoirLight Pack: fast first-deposit offer page, UGC/trust creative, tap-to-claim angle, direct-response bonus video, static batch and hook variations."
     },
     cardMetrics: ["NoirLight", "3 videos", "5 statics", "landing + hooks"]
   },
@@ -364,10 +364,10 @@ const translations = {
     },
     cases: [
       {
-        title: "1Win Ontario - First Deposit Creative Pack",
+        title: "BlueSpin Ontario Creative Pack",
         input: "Welcome Bonus up to $1,000 + 250 Free Spins on the first deposit",
         output: "NoirLight Pack: 3 video creatives, 5 statics, 1 landing / offer page and 3 hook variations",
-        result: "A compact first-deposit acquisition pack for Ontario: trust video, entertainment slot trailer, direct-response offer angle, statics, landing and hooks.",
+        result: "A compact first-deposit acquisition pack for Ontario: trust video, tap-to-claim promo, direct-response offer angle, statics, landing and hooks.",
         tags: ["iGaming", "NoirLight Pack", "First Deposit"],
         built: [
           "main promo for free bonus traffic",
@@ -534,9 +534,9 @@ const translations = {
     },
     cases: [
       {
-        title: "1Win Ontario - First Deposit Creative Pack",
+        title: "BlueSpin Ontario Creative Pack",
         input: "Welcome bonus за первый депозит в онлайн-казино",
-        output: "Тест-пак: 3 video slots, HTML-лендинг, 5 Facebook statics и 3 hook-угла",
+        output: "Тест-пак: 3 video creatives, HTML-лендинг, 5 Facebook statics и 3 hook-угла",
         result: "Компактный acquisition pack под bonus-трафик: ролики, статики для Facebook, лендинг и hook-углы.",
         tags: ["iGaming", "NoirLight Pack", "First Deposit"],
         built: [
@@ -704,9 +704,9 @@ const translations = {
     },
     cases: [
       {
-        title: "1Win Ontario - First Deposit Creative Pack",
+        title: "BlueSpin Ontario Creative Pack",
         input: "Welcome bonus за перший депозит в онлайн-казино",
-        output: "Тест-пак: 3 video slots, HTML-лендинг, 5 Facebook statics і 3 hook-кути",
+        output: "Тест-пак: 3 video creatives, HTML-лендинг, 5 Facebook statics і 3 hook-кути",
         result: "Компактний acquisition pack під bonus-трафік: ролики, статики для Facebook, лендинг і hook-кути.",
         tags: ["iGaming", "NoirLight Pack", "First Deposit"],
         built: [
@@ -1394,6 +1394,9 @@ function CaseModal({ t, item, onClose }) {
     }
   ];
   const hasPackMedia = Boolean(item.videos?.length || item.statics?.length || item.hooks?.length || item.landingPreview);
+  const landingLinkProps = item.landingUrl?.startsWith("/")
+    ? {}
+    : { target: "_blank", rel: "noreferrer" };
 
   return createPortal(
     <>
@@ -1513,12 +1516,12 @@ function CaseModal({ t, item, onClose }) {
             <section className="nv-pack-section">
               <div className="nv-pack-section-head">
                 <p>{t.modal.landing}</p>
-                <a href={item.landingUrl} target="_blank" rel="noreferrer">
+                <a href={item.landingUrl} {...landingLinkProps}>
                   {t.modal.viewLanding}
                   <ExternalLink size={15} />
                 </a>
               </div>
-              <a className="nv-pack-landing" href={item.landingUrl} target="_blank" rel="noreferrer">
+              <a className="nv-pack-landing" href={item.landingUrl} {...landingLinkProps}>
                 <img src={item.landingPreview} alt={`${item.title} landing preview`} />
                 <span>
                   HTML landing
@@ -1572,7 +1575,7 @@ function CaseModal({ t, item, onClose }) {
             </div>
           </div>
           <div className="nv-modal-actions">
-            <a href={item.landingUrl} target="_blank" rel="noreferrer">
+            <a href={item.landingUrl} {...landingLinkProps}>
               {t.modal.viewLanding}
               <ExternalLink size={16} />
             </a>
