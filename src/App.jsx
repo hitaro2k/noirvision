@@ -303,20 +303,8 @@ const caseAssets = [
     ]
   },
   {
-    id: "firstua-friend-bonus",
-    number: "004",
-    filters: ["igaming"],
-    videoUrl: "/watermarked/videos/BR10fr3000$.mp4",
-    landingUrl: "/?landing=firstua",
-    landingScreens: [
-      "/watermarked/landing/landimage/firstBRfriend1.png",
-      "/watermarked/landing/landimage/firstBRfriend2.png",
-      "/watermarked/landing/landimage/firstBRfriend3.png"
-    ]
-  },
-  {
     id: "patagonia-goretex-cinema",
-    number: "005",
+    number: "004",
     filters: ["product"],
     videoUrl: "/watermarked/videos/patagonia(final).mp4",
     landingUrl: "/?landing=patagonia",
@@ -393,14 +381,6 @@ const translations = {
         result: "Beauty offer turned into a soft creator demo with purchase CTA.",
         tags: ["Beauty", "UGC", "KIKO"],
         built: ["creator review", "beauty demo", "phone-frame video", "social proof", "purchase CTA"]
-      },
-      {
-        title: "FirstUA Friend Bonus",
-        input: "10 friends = 3000$ bonus offer",
-        output: "Fast casino video + promo landing",
-        result: "Video and landing assembled as a rapid iGaming test in 10 minutes.",
-        tags: ["iGaming", "Fast Test", "Bonus"],
-        built: ["direct bonus hook", "referral mechanic", "fast video", "offer landing", "launch CTA"]
       },
       {
         title: "Patagonia Gore-Tex Cinema",
@@ -565,14 +545,6 @@ const translations = {
         built: ["creator review", "beauty demo", "phone-frame video", "social proof", "purchase CTA"]
       },
       {
-        title: "FirstUA Friend Bonus",
-        input: "10 друзей = 3000$ bonus offer",
-        output: "Fast casino video + promo landing",
-        result: "Видео и лендинг собраны как быстрый iGaming test за 10 минут.",
-        tags: ["iGaming", "Fast Test", "Bonus"],
-        built: ["direct bonus hook", "referral mechanic", "fast video", "offer landing", "launch CTA"]
-      },
-      {
         title: "Patagonia Gore-Tex Cinema",
         input: "Промо Gore-Tex куртки",
         output: "AI-cinema promo + product landing",
@@ -733,14 +705,6 @@ const translations = {
         result: "Beauty offer упакований у м'який creator demo з purchase CTA.",
         tags: ["Beauty", "UGC", "KIKO"],
         built: ["creator review", "beauty demo", "phone-frame video", "social proof", "purchase CTA"]
-      },
-      {
-        title: "FirstUA Friend Bonus",
-        input: "10 друзів = 3000$ bonus offer",
-        output: "Fast casino video + promo landing",
-        result: "Відео і лендинг зібрані як швидкий iGaming test за 10 хвилин.",
-        tags: ["iGaming", "Fast Test", "Bonus"],
-        built: ["direct bonus hook", "referral mechanic", "fast video", "offer landing", "launch CTA"]
       },
       {
         title: "Patagonia Gore-Tex Cinema",

@@ -1,13 +1,11 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import FirstUaPromoLanding from "./landings/FirstUaPromoLanding.jsx";
 import KikoUgcLanding from "./landings/KikoUgcLanding.jsx";
 import PatagoniaGoreTexLanding from "./landings/PatagoniaGoreTexLanding.jsx";
 import "./styles.css";
 
 const landingPages = {
-  firstua: FirstUaPromoLanding,
   kiko: KikoUgcLanding,
   patagonia: PatagoniaGoreTexLanding
 };
