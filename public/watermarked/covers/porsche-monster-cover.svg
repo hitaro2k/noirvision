@@ -1,0 +1,19 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#020202"/>
+  <rect x="64" y="64" width="1472" height="872" stroke="#1f1f1f" stroke-width="2"/>
+  <path d="M0 742C285 648 493 676 745 742C1000 809 1261 823 1600 690V1000H0V742Z" fill="#041427" fill-opacity="0.86"/>
+  <path d="M0 760C263 674 516 708 736 763C1043 839 1290 822 1600 716" stroke="#0A7CFF" stroke-opacity="0.55" stroke-width="4"/>
+  <g opacity="0.22">
+    <path d="M132 190H1470" stroke="#202020"/>
+    <path d="M132 810H1470" stroke="#202020"/>
+    <path d="M222 96V904" stroke="#151515"/>
+    <path d="M1378 96V904" stroke="#151515"/>
+  </g>
+  <text x="800" y="362" text-anchor="middle" fill="#F4F4F4" font-family="Arial Black, Arial, sans-serif" font-size="122" font-weight="900" letter-spacing="10">PORSCHE</text>
+  <text x="800" y="500" text-anchor="middle" fill="#F4F4F4" font-family="Arial Black, Arial, sans-serif" font-size="54" font-weight="900" letter-spacing="18">X</text>
+  <g transform="translate(0 32)">
+    <path d="M595 548C620 626 636 681 660 765C688 686 710 622 738 548H800C822 621 842 686 862 765C891 675 911 614 934 548H1003L911 811H826C805 744 781 671 760 603C735 675 712 744 686 811H604L522 548H595Z" fill="#79D538"/>
+    <text x="800" y="854" text-anchor="middle" fill="#F4F4F4" font-family="Arial Black, Arial, sans-serif" font-size="80" font-weight="900" letter-spacing="8">MONSTER</text>
+  </g>
+  <text x="800" y="916" text-anchor="middle" fill="#7F8DA3" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="8">BLUE FORMAT PROMO VIDEO</text>
+</svg>

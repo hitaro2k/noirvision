@@ -280,8 +280,26 @@ const caseAssets = [
     cardMetrics: ["NoirLight", "3 videos", "5 statics", "landing + hooks"]
   },
   {
-    id: "fitnerd-fitness-ai",
+    id: "porsche-monster-blue-promo",
     number: "002",
+    filters: ["product"],
+    coverImage: "/watermarked/covers/porsche-monster-cover.svg",
+    videoUrl: "/watermarked/videos/porschexMonster.mp4",
+    videoLayout: "wide",
+    videos: [
+      {
+        title: "Porsche x Monster Blue Promo",
+        label: "Product promo video",
+        description: "Blue-format collaboration promo built around speed, energy and launch impact.",
+        url: "/watermarked/videos/porschexMonster.mp4",
+        poster: "/watermarked/covers/porsche-monster-cover.svg"
+      }
+    ],
+    cardMetrics: ["Product", "Collab", "blue promo"]
+  },
+  {
+    id: "fitnerd-fitness-ai",
+    number: "003",
     filters: ["product", "ugc"],
     coverImage: "/watermarked/Fitnerd/fitnerd_cover.jpg",
     videoUrl: "/watermarked/videos/FItnerdUGCMain.mp4",
@@ -290,7 +308,7 @@ const caseAssets = [
   },
   {
     id: "kiko-contouring-ugc",
-    number: "003",
+    number: "004",
     filters: ["beauty", "ugc", "product"],
     videoUrl: "/watermarked/videos/kiko_conturing.mp4",
     phoneVideoUrl: "/watermarked/videos/kiko_conturing.mp4",
@@ -304,7 +322,7 @@ const caseAssets = [
   },
   {
     id: "patagonia-goretex-cinema",
-    number: "004",
+    number: "005",
     filters: ["product"],
     videoUrl: "/watermarked/videos/patagonia(final).mp4",
     landingUrl: "/?landing=patagonia",
@@ -365,6 +383,14 @@ const translations = {
           "Facebook static set",
           "hook angle files"
         ]
+      },
+      {
+        title: "Porsche x Monster Blue Promo",
+        input: "Advertising offer for a Porsche x Monster collaboration",
+        output: "Blue-format product promo video",
+        result: "A dark performance promo for the Porsche x Monster collaboration, built around speed, energy and social launch impact.",
+        tags: ["Product", "Collab", "AI Video"],
+        built: ["black logo cover", "blue-format promo", "automotive energy angle", "short-form product video", "launch-ready asset"]
       },
       {
         title: "Fitnerd FitnessAI",
@@ -529,6 +555,14 @@ const translations = {
         ]
       },
       {
+        title: "Porsche x Monster Blue Promo",
+        input: "Реклама коллаборации Porsche x Monster",
+        output: "Промо-видео в синем формате",
+        result: "Темный performance-промо под коллаборацию Porsche x Monster: скорость, энергия и визуал под social launch.",
+        tags: ["Product", "Collab", "AI Video"],
+        built: ["черная заставка с логотипами", "blue-format promo", "авто-энергетический угол", "short-form product video", "готовый asset под запуск"]
+      },
+      {
         title: "Fitnerd FitnessAI",
         input: "Промо AI tracker для интроверта ",
         output: "UGC promo video + live landing page",
@@ -689,6 +723,14 @@ const translations = {
           "набір Facebook statics",
           "hook-файли під кути заходу"
         ]
+      },
+      {
+        title: "Porsche x Monster Blue Promo",
+        input: "Реклама колаборації Porsche x Monster",
+        output: "Промо-відео у синьому форматі",
+        result: "Темне performance-промо під колаборацію Porsche x Monster: швидкість, енергія і візуал під social launch.",
+        tags: ["Product", "Collab", "AI Video"],
+        built: ["чорна заставка з логотипами", "blue-format promo", "авто-енергетичний кут", "short-form product video", "готовий asset під запуск"]
       },
       {
         title: "Fitnerd FitnessAI",
@@ -1355,7 +1397,7 @@ function CaseModal({ t, item, onClose }) {
       label: t.modal.videos,
       description: item.result,
       url: item.videoUrl,
-      poster: item.landingScreens?.[0]
+      poster: item.coverImage || item.landingScreens?.[0]
     }
   ];
   const hasPackMedia = Boolean(item.videos?.length || item.statics?.length || item.hooks?.length || item.landingPreview);
@@ -1442,14 +1484,14 @@ function CaseModal({ t, item, onClose }) {
               </div>
               <div className="nv-pack-video-grid">
                 {videos.map((video) => (
-                  <article key={video.title} className={video.pending ? "is-pending" : ""}>
+                  <article key={video.title} className={`${video.pending ? "is-pending" : ""} ${item.videoLayout === "wide" ? "is-wide-video" : ""}`}>
                     {video.pending ? (
                       <div className="nv-video-placeholder">
                         <Video size={24} />
                         <span>{video.label}</span>
                       </div>
                     ) : (
-                      <video src={video.url} poster={video.poster} controls playsInline preload="metadata" />
+                      <PackVideo video={video} />
                     )}
                     <div>
                       <span>{video.label}</span>
@@ -1461,7 +1503,7 @@ function CaseModal({ t, item, onClose }) {
               </div>
             </section>
           ) : (
-            <video className="nv-modal-video" src={item.videoUrl} controls playsInline preload="metadata" />
+            <video className="nv-modal-video" src={item.videoUrl} poster={item.coverImage || item.landingScreens?.[0]} controls playsInline preload="metadata" />
           )}
           <div className="nv-modal-info">
             <article>
@@ -1528,22 +1570,26 @@ function CaseModal({ t, item, onClose }) {
               </div>
             </section>
           )}
-          <div className="nv-landing-strip">
-            <h3>{t.modal.landing}</h3>
-            <div>
-              {item.landingScreens.map((src, index) => (
-                <button key={src} type="button" onClick={() => setLightbox(src)}>
-                  <img src={src} alt={`${item.title} screen ${index + 1}`} />
-                  <span>SCREEN {index + 1}</span>
-                </button>
-              ))}
+          {item.landingScreens?.length > 0 && (
+            <div className="nv-landing-strip">
+              <h3>{t.modal.landing}</h3>
+              <div>
+                {item.landingScreens.map((src, index) => (
+                  <button key={src} type="button" onClick={() => setLightbox(src)}>
+                    <img src={src} alt={`${item.title} screen ${index + 1}`} />
+                    <span>SCREEN {index + 1}</span>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           <div className="nv-modal-actions">
-            <a href={item.landingUrl} {...landingLinkProps}>
-              {t.modal.viewLanding}
-              <ExternalLink size={16} />
-            </a>
+            {item.landingUrl && (
+              <a href={item.landingUrl} {...landingLinkProps}>
+                {t.modal.viewLanding}
+                <ExternalLink size={16} />
+              </a>
+            )}
             <a href={TELEGRAM_URL} target="_blank" rel="noreferrer">
               {t.modal.request}
               <ArrowUpRight size={16} />
@@ -1569,6 +1615,33 @@ function CaseModal({ t, item, onClose }) {
       </AnimatePresence>
     </>,
     document.body
+  );
+}
+
+function PackVideo({ video }) {
+  const videoRef = useRef(null);
+  const [started, setStarted] = useState(false);
+
+  const playVideo = () => {
+    setStarted(true);
+    const player = videoRef.current;
+    if (!player) return;
+    const playPromise = player.play();
+    if (playPromise?.catch) playPromise.catch(() => {});
+  };
+
+  return (
+    <div className={`nv-pack-video-frame ${started ? "is-started" : ""}`}>
+      <video ref={videoRef} src={video.url} poster={video.poster} controls={started} playsInline preload="metadata" />
+      {!started && video.poster && (
+        <button type="button" className="nv-video-cover-button" onClick={playVideo} aria-label={`Play ${video.title}`}>
+          <img src={video.poster} alt="" />
+          <span>
+            <Play size={30} />
+          </span>
+        </button>
+      )}
+    </div>
   );
 }
 
