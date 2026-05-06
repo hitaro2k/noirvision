@@ -283,6 +283,7 @@ const caseAssets = [
     id: "fitnerd-fitness-ai",
     number: "002",
     filters: ["product", "ugc"],
+    coverImage: "/watermarked/Fitnerd/fitnerd_cover.jpg",
     videoUrl: "/watermarked/videos/FItnerdUGCMain.mp4",
     landingUrl: "https://fitnerd-aiassistent.vercel.app/",
     landingScreens: ["/watermarked/landing/landimage/Fitnerdland1.png", "/watermarked/landing/landimage/Fitnerdland2.png"]
