@@ -298,8 +298,26 @@ const caseAssets = [
     cardMetrics: ["Product", "Collab", "blue promo"]
   },
   {
-    id: "fitnerd-fitness-ai",
+    id: "adidas-f50-predator-launch",
     number: "003",
+    filters: ["product"],
+    coverImage: "/watermarked/covers/adidas-f50-predator-cover.svg",
+    videoUrl: "/watermarked/videos/ADIFINAL.mp4",
+    videoLayout: "wide",
+    videos: [
+      {
+        title: "Adidas F50 x Predator Launch Promo",
+        label: "Product promo video",
+        description: "Launch promo for the Adidas F50 speed boot and Adidas Predator control boot.",
+        url: "/watermarked/videos/ADIFINAL.mp4",
+        poster: "/watermarked/covers/adidas-f50-predator-cover.svg"
+      }
+    ],
+    cardMetrics: ["Product", "F50", "Predator"]
+  },
+  {
+    id: "fitnerd-fitness-ai",
+    number: "004",
     filters: ["product", "ugc"],
     coverImage: "/watermarked/Fitnerd/fitnerd_cover.jpg",
     videoUrl: "/watermarked/videos/FItnerdUGCMain.mp4",
@@ -308,7 +326,7 @@ const caseAssets = [
   },
   {
     id: "kiko-contouring-ugc",
-    number: "004",
+    number: "005",
     filters: ["beauty", "ugc", "product"],
     videoUrl: "/watermarked/videos/kiko_conturing.mp4",
     phoneVideoUrl: "/watermarked/videos/kiko_conturing.mp4",
@@ -322,7 +340,7 @@ const caseAssets = [
   },
   {
     id: "patagonia-goretex-cinema",
-    number: "005",
+    number: "006",
     filters: ["product"],
     videoUrl: "/watermarked/videos/patagonia(final).mp4",
     landingUrl: "/?landing=patagonia",
@@ -391,6 +409,14 @@ const translations = {
         result: "A dark performance promo for the Porsche x Monster collaboration, built around speed, energy and social launch impact.",
         tags: ["Product", "Collab", "AI Video"],
         built: ["black logo cover", "blue-format promo", "automotive energy angle", "short-form product video", "launch-ready asset"]
+      },
+      {
+        title: "Adidas F50 x Predator Launch Promo",
+        input: "New Adidas F50 and Adidas Predator boots launch",
+        output: "Product promo video for a two-silhouette football boot drop",
+        result: "A launch-ready Adidas shoe ad that packages F50 as the speed angle and Predator as the control angle.",
+        tags: ["Product", "Adidas", "AI Video"],
+        built: ["new sneaker offer packaging", "F50 speed angle", "Predator control angle", "wide promo video", "launch-ready product ad"]
       },
       {
         title: "Fitnerd FitnessAI",
@@ -563,6 +589,14 @@ const translations = {
         built: ["черная заставка с логотипами", "blue-format promo", "авто-энергетический угол", "short-form product video", "готовый asset под запуск"]
       },
       {
+        title: "Adidas F50 x Predator Launch Promo",
+        input: "Реклама новых кроссовок Adidas F50 и Adidas Predator",
+        output: "Product promo video под запуск двух футбольных силуэтов",
+        result: "Упакованный Adidas-оффер: F50 как угол скорости, Predator как угол контроля, все собрано в launch-ready promo.",
+        tags: ["Product", "Adidas", "AI Video"],
+        built: ["упаковка sneaker offer", "F50 speed angle", "Predator control angle", "широкое промо-видео", "готовая product ad под запуск"]
+      },
+      {
         title: "Fitnerd FitnessAI",
         input: "Промо AI tracker для интроверта ",
         output: "UGC promo video + live landing page",
@@ -731,6 +765,14 @@ const translations = {
         result: "Темне performance-промо під колаборацію Porsche x Monster: швидкість, енергія і візуал під social launch.",
         tags: ["Product", "Collab", "AI Video"],
         built: ["чорна заставка з логотипами", "blue-format promo", "авто-енергетичний кут", "short-form product video", "готовий asset під запуск"]
+      },
+      {
+        title: "Adidas F50 x Predator Launch Promo",
+        input: "Реклама нових кросівок Adidas F50 і Adidas Predator",
+        output: "Product promo video під запуск двох футбольних силуетів",
+        result: "Упакований Adidas-оффер: F50 як кут швидкості, Predator як кут контролю, все зібрано в launch-ready promo.",
+        tags: ["Product", "Adidas", "AI Video"],
+        built: ["упаковка sneaker offer", "F50 speed angle", "Predator control angle", "широке промо-відео", "готова product ad під запуск"]
       },
       {
         title: "Fitnerd FitnessAI",

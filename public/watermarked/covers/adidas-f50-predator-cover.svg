@@ -1,0 +1,28 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#030303"/>
+  <rect x="64" y="64" width="1472" height="872" stroke="#1f1f1f" stroke-width="2"/>
+  <g opacity="0.28">
+    <path d="M116 196H1484" stroke="#242424"/>
+    <path d="M116 804H1484" stroke="#242424"/>
+    <path d="M232 92V908" stroke="#171717"/>
+    <path d="M1368 92V908" stroke="#171717"/>
+  </g>
+  <path d="M0 692C255 617 468 620 728 694C1014 775 1266 790 1600 646V1000H0V692Z" fill="#07111F"/>
+  <path d="M0 712C285 638 491 653 734 719C1032 799 1284 777 1600 674" stroke="#266BFF" stroke-opacity="0.58" stroke-width="4"/>
+  <path d="M994 138L1512 690" stroke="#FF2747" stroke-opacity="0.22" stroke-width="72"/>
+  <path d="M1120 110L1570 590" stroke="#F7F7F7" stroke-opacity="0.08" stroke-width="38"/>
+  <g transform="translate(800 286)">
+    <rect x="-258" y="-72" width="516" height="144" rx="0" fill="#F4F4F4"/>
+    <text x="0" y="26" text-anchor="middle" fill="#050505" font-family="Arial Black, Arial, sans-serif" font-size="88" font-weight="900" letter-spacing="3">adidas</text>
+  </g>
+  <text x="800" y="478" text-anchor="middle" fill="#F5F5F5" font-family="Arial Black, Arial, sans-serif" font-size="112" font-weight="900" letter-spacing="4">F50 / PREDATOR</text>
+  <text x="800" y="568" text-anchor="middle" fill="#9BA8B8" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="9">NEW BOOTS LAUNCH PROMO</text>
+  <g transform="translate(360 710)">
+    <text x="0" y="0" fill="#2B7CFF" font-family="Arial Black, Arial, sans-serif" font-size="78" font-weight="900" letter-spacing="2">F50</text>
+    <text x="0" y="48" fill="#B7C0CF" font-family="Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="6">SPEED ANGLE</text>
+  </g>
+  <g transform="translate(960 710)">
+    <text x="0" y="0" fill="#FF3152" font-family="Arial Black, Arial, sans-serif" font-size="78" font-weight="900" letter-spacing="2">PREDATOR</text>
+    <text x="0" y="48" fill="#B7C0CF" font-family="Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="6">CONTROL ANGLE</text>
+  </g>
+</svg>
